@@ -165,10 +165,25 @@ function renderHero() {
       p._x = (r.x / 100) * res[0]; p._y = (r.y / 100) * res[1];
       p.style.visibility = r.x < 2 || r.x > 98 || r.y < 2 || r.y > 98 ? 'hidden' : 'visible';
     });
+    hidePinsOverText();
     placeCard(res);
   }
 }
 gsap.ticker.add(() => { if (heroVisible) renderHero(); });
+
+
+// Pins never sit on top of words: fade any pin that would touch the hero copy.
+const pinAvoid = [$('.hero__title'), $('.hero__aside'), $('.wordmark__svg text'), $('.hero__top')];
+function hidePinsOverText() {
+  const sr = stage.getBoundingClientRect();
+  const boxes = pinAvoid.filter(Boolean).map((el) => el.getBoundingClientRect()).filter((b) => b.width > 0);
+  pinEls.forEach((p) => {
+    if (p._x == null) return;
+    const x = sr.left + p._x, y = sr.top + p._y, pad = 16;
+    const hit = boxes.some((b) => x > b.left - pad && x < b.right + pad && y > b.top - pad && y < b.bottom + pad);
+    if (hit !== p._hit) { p._hit = hit; gsap.to(p, { opacity: hit ? 0 : 1, duration: 0.35, overwrite: true }); p.style.pointerEvents = hit ? 'none' : ''; }
+  });
+}
 
 function placeCard(res) {
   if (!card) return;
@@ -1007,7 +1022,6 @@ async function boot() {
   initProc();
   initPlatform();
   initTicker();
-  initDeck();
   initTeam();
   initRequest();
   initFooter();

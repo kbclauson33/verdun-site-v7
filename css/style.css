@@ -639,7 +639,8 @@ html.js .person__photo img { -webkit-mask-image: repeating-linear-gradient(90deg
 }
 
 .hero__aside .hero__sub { font-size: clamp(20px, 1.9vw, 30px); font-weight: 500; letter-spacing: -.025em; line-height: 1.15; color: var(--fg); }
-.hero__aside .hero__sub b { font-weight: 500; }
+.hero__aside .hero__sub b { font-weight: 500; display: block; }
+.hero__aside .hero__sub em { display: block; }
 .hero__aside .hero__sub em { color: var(--blue); }
 .hero__aside { flex-direction: column; align-items: flex-end; gap: 18px; text-align: right; }
 
@@ -656,6 +657,30 @@ html.js .person__photo img { -webkit-mask-image: repeating-linear-gradient(90deg
 .chap__text h3 { font-size: clamp(26px, 2.3vw, 38px); letter-spacing: -.03em; line-height: 1.08; }
 .qstep h3 { font-size: clamp(22px, 1.9vw, 30px); letter-spacing: -.025em; line-height: 1.12; }
 .request__title { font-size: clamp(26px, 2.8vw, 44px); }
+
+/* ---------- key queue headline stays big ---------- */
+.problem__head { grid-template-columns: 1fr; border-top: 0; padding-top: 0; row-gap: 28px; }
+.problem__head .display { font-size: clamp(40px, 6.2vw, 96px); line-height: .98; letter-spacing: -.045em; max-width: 15em; }
+.problem__head .lede { justify-self: start; font-size: clamp(17px, 1.45vw, 21px); max-width: 34em; }
+
+/* ---------- technology: wide photo, six capabilities with room ---------- */
+.platform__grid { grid-template-columns: 1fr; gap: clamp(56px, 9vh, 104px); }
+.field { position: relative; top: auto; }
+.field__frame { aspect-ratio: 21 / 9; }
+.caps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(44px, 7vh, 72px) clamp(32px, 4vw, 80px); }
+.cap { padding: 26px 0 0; border-bottom: 0; border-top: 1px solid var(--line); gap: 14px; align-content: start; }
+.cap::after { top: -1px; bottom: auto; }
+.cap__n { top: 28px; }
+.cap h3 { font-size: clamp(20px, 1.6vw, 24px); }
+.cap p { max-width: 26em; }
+@media (max-width: 1100px) { .caps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .field__frame { aspect-ratio: 4 / 3; } .caps { gap: 34px; } }
+
+/* ---------- product: static camera view ---------- */
+.product { height: auto; }
+.product__pin { position: relative; height: auto; padding: clamp(100px, 16vh, 180px) 0; overflow: visible; }
+.deck { height: auto; perspective: none; }
+.deck__card { position: relative; top: auto; transform: none; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1180px) {

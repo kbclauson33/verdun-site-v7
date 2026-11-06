@@ -638,7 +638,7 @@ html.js .person__photo img { -webkit-mask-image: repeating-linear-gradient(90deg
   .file__photo { grid-row: span 2; }
 }
 
-.hero__aside .hero__sub { font-size: clamp(20px, 1.9vw, 30px); font-weight: 500; letter-spacing: -.025em; line-height: 1.15; color: var(--fg); }
+.hero__aside .hero__sub { white-space: nowrap; font-size: clamp(17px, 1.55vw, 24px); font-weight: 500; letter-spacing: -.025em; line-height: 1.15; color: var(--fg); }
 .hero__aside .hero__sub b { font-weight: 500; display: block; }
 .hero__aside .hero__sub em { display: block; }
 .hero__aside .hero__sub em { color: var(--blue); }
@@ -705,7 +705,7 @@ html.js .person__photo img { -webkit-mask-image: repeating-linear-gradient(90deg
   .problem__head .lede, .approach__head .lede, .platform__head .lede { justify-self: start; }
   .hero__bottom { grid-template-columns: 1fr; align-items: start; gap: 18px; }
   .hero__aside { justify-content: space-between; align-items: center; flex-direction: row; text-align: left; gap: 14px; }
-  .hero__aside .hero__sub { font-size: 19px; }
+  .hero__aside .hero__sub { font-size: 19px; white-space: normal; }
   .hero__aside .btn { --h: 46px; padding-left: 16px; font-size: 12px; }
   .hero__aside .btn svg { width: 34px; height: 34px; padding: 9px; }
   .queue { grid-template-columns: 1fr; grid-template-areas: "sticky" "steps"; padding: 0; gap: 0; }

@@ -65,6 +65,24 @@
   menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   $$('.menu__list a', menu).forEach((a) => a.addEventListener('click', () => { menu.hidden = true; lenis.start(); }));
 
+  // Toggles (Common questions)
+  $$('details[data-more]').forEach((d) => {
+    const sum = $('summary', d), body = $('.more__body', d);
+    sum.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (d._busy) return; d._busy = true;
+      const done = () => { d._busy = false; ScrollTrigger.refresh(); };
+      if (!d.open) {
+        d.open = true;
+        if (REDUCE) { done(); return; }
+        gsap.fromTo(body, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.6, ease, onComplete: () => { gsap.set(body, { clearProps: 'height,opacity' }); done(); } });
+      } else {
+        if (REDUCE) { d.open = false; done(); return; }
+        gsap.to(body, { height: 0, opacity: 0, duration: 0.4, ease: 'power2.inOut', onComplete: () => { d.open = false; gsap.set(body, { clearProps: 'height,opacity' }); done(); } });
+      }
+    });
+  });
+
   if (REDUCE) return;
 
   // Generic reveals for sub pages.

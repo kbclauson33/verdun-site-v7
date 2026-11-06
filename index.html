@@ -3,21 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- seo:start -->
 <title>Verdun | AI video monitoring with human operators</title>
-<meta name="description" content="Verdun is a remote video monitoring service. AI agents review every alarm. Trained operators respond to real threats. Backed by Y Combinator.">
-<meta name="theme-color" content="#080b10">
+<meta name="description" content="A remote video monitoring service. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down and dispatch.">
+<link rel="canonical" href="https://verdun.ai/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verdun">
 <meta property="og:title" content="Verdun | AI video monitoring with human operators">
-<meta property="og:description" content="We built the world’s most advanced monitoring center.">
-<meta property="og:image" content="https://verdun-site.vercel.app/assets/og-image.jpg">
-<meta property="og:url" content="https://verdun-site.vercel.app/">
+<meta property="og:description" content="A remote video monitoring service. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down and dispatch.">
+<meta property="og:image" content="https://verdun.ai/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://verdun.ai/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preload" href="assets/yard.webp" as="image" type="image/webp">
-<link rel="preload" href="assets/fonts/geist-semibold.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="assets/fonts/geist-regular.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="vendor/lenis.css">
-<link rel="stylesheet" href="css/style.css">
+<meta name="twitter:site" content="@VerdunAI">
+<meta name="twitter:title" content="Verdun | AI video monitoring with human operators">
+<meta name="twitter:description" content="A remote video monitoring service. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down and dispatch.">
+<meta name="twitter:image" content="https://verdun.ai/og-image.jpg">
+<link rel="manifest" href="/site.webmanifest">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18541176135"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","AW-18541176135");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://verdun.ai/#org", "name": "Verdun", "legalName": "Enari Inc.", "alternateName": "Enari Inc. (dba Verdun)", "url": "https://verdun.ai/", "logo": "https://verdun.ai/icon-512.png", "image": "https://verdun.ai/og-image.jpg", "email": "support@verdun.ai", "description": "A remote video monitoring service. AI agents review every alarm. Trained operators respond to real threats.", "slogan": "We built the world’s most advanced monitoring center.", "founder": [{"@id": "https://verdun.ai/about#sonny-tai"}, {"@id": "https://verdun.ai/about#tung-hoang"}], "sameAs": ["https://www.linkedin.com/company/verdunai", "https://www.ycombinator.com/companies/verdun", "https://x.com/VerdunAI"], "knowsAbout": ["Remote video monitoring", "AI video analytics", "Alarm verification", "Live talk-down", "Security dispatch"]}, {"@type": "WebSite", "@id": "https://verdun.ai/#website", "url": "https://verdun.ai/", "name": "Verdun", "publisher": {"@id": "https://verdun.ai/#org"}}, {"@type": "Service", "@id": "https://verdun.ai/#monitoring", "name": "Verdun remote video monitoring", "serviceType": "Remote video monitoring", "provider": {"@id": "https://verdun.ai/#org"}, "description": "Tell us what you want to look for. Our AI looks for it and our human operators act on it. AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.", "audience": {"@type": "BusinessAudience", "name": "Commercial, multifamily, and industrial properties"}}]}</script>
+<!-- seo:end -->
+<meta name="theme-color" content="#080b10">
+<link rel="icon" href="static/media/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/media/apple-touch-icon.png">
+<link rel="preload" href="static/media/yard.webp" as="image" type="image/webp">
+<link rel="preload" href="static/media/fonts/geist-semibold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="static/media/fonts/geist-regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="static/vendor/lenis.css">
+<link rel="stylesheet" href="static/css/style.css">
 <script>
   // Decide before first paint whether the opening plays.
   (function () {
@@ -27,11 +42,6 @@
     if (reduce || /[?&]skip/.test(q) || (location.hash && location.hash.length > 1)) d.classList.add('no-intro');
     else d.classList.add('intro-pending');
     if (reduce) d.classList.add('reduce-motion');
-    // ?timers: drive animation from timers (for automated review in a hidden browser pane).
-    if (/[?&]timers/.test(q)) {
-      window.requestAnimationFrame = function (cb) { return setTimeout(function () { cb(performance.now()); }, 16); };
-      window.cancelAnimationFrame = function (id) { clearTimeout(id); };
-    }
   })();
 </script>
 </head>
@@ -73,10 +83,10 @@
     <span class="brand__word">verdun</span>
   </a>
   <nav class="nav" aria-label="Primary">
-    <a href="integrators.html">For integrators and security dealers</a>
+    <a href="/integrators">For integrators and security dealers</a>
   </nav>
   <div class="header__end">
-    <a class="btn btn--ghost btn--sm nav-cta" href="get-started.html" data-magnetic data-demo>
+    <a class="btn btn--ghost btn--sm nav-cta" href="/get-started" data-magnetic data-demo>
       <span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg>
     </a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
@@ -95,9 +105,9 @@
       <button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
     </div>
     <ol class="menu__list">
-      <li><a href="integrators.html"><span class="menu__n">01</span><span class="menu__t">For integrators and security dealers</span></a></li>
-      <li><a href="get-started.html" data-demo><span class="menu__n">02</span><span class="menu__t">Book a demo</span></a></li>
-      <li><a href="about.html"><span class="menu__n">03</span><span class="menu__t">About</span></a></li>
+      <li><a href="/integrators"><span class="menu__n">01</span><span class="menu__t">For integrators and security dealers</span></a></li>
+      <li><a href="/get-started" data-demo><span class="menu__n">02</span><span class="menu__t">Book a demo</span></a></li>
+      <li><a href="/about"><span class="menu__n">03</span><span class="menu__t">About</span></a></li>
       <li><a href="https://verdun.ai/essays"><span class="menu__n">04</span><span class="menu__t">Essays</span></a></li>
       <li><a href="https://verdun.ai/careers"><span class="menu__n">05</span><span class="menu__t">Careers</span></a></li>
     </ol>
@@ -115,7 +125,7 @@
   <div class="hero__sticky">
     <div class="stage" data-stage>
       <canvas class="stage__canvas" data-film aria-hidden="true"></canvas>
-      <img class="stage__fallback" src="assets/yard.webp" alt="" aria-hidden="true" data-fallback>
+      <img width="1920" height="1080" class="stage__fallback" src="static/media/yard.webp" alt="" aria-hidden="true" data-fallback>
       <div class="stage__shade" aria-hidden="true"></div>
 
       <!-- Annotations attached to source-image coordinates (authored, not detection) -->
@@ -175,7 +185,7 @@
           </h1>
           <div class="hero__aside" data-hero-in>
             <p class="hero__sub">We built the world’s most advanced monitoring center <em>so you don’t have to take that bet.</em></p>
-            <a class="btn btn--blue" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--blue" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </div>
@@ -331,7 +341,7 @@
         <span class="label label--ink">05 / The result</span>
         <h3>An operator gets the clip, a live view, and your protocol on one screen.</h3>
         <p class="stat"><b class="is-ink">&lt;90&nbsp;s</b><span>Every alarm reviewed in under 90 seconds.</span></p>
-        <a class="btn btn--ink" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ink" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <details class="more more--ink" data-more>
           <summary><span>How it works</span><i aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__inner">
@@ -365,10 +375,10 @@
       <div class="proc__ground" aria-hidden="true"><canvas data-ground></canvas></div>
       <div class="proc__hud">
         <span class="label" data-proc-label>01 / Watch</span>
-        <div class="proc__dots" role="tablist" aria-label="Approach chapters">
-          <button type="button" data-chap="0" aria-label="Watch">01</button>
-          <button type="button" data-chap="1" aria-label="Verify">02</button>
-          <button type="button" data-chap="2" aria-label="Respond">03</button>
+        <div class="proc__dots" role="group" aria-label="Approach chapters">
+          <button type="button" data-chap="0" aria-label="01 Watch">01</button>
+          <button type="button" data-chap="1" aria-label="02 Verify">02</button>
+          <button type="button" data-chap="2" aria-label="03 Respond">03</button>
         </div>
         <span class="proc__progress"><i data-proc-progress></i></span>
       </div>
@@ -377,8 +387,8 @@
         <!-- WATCH -->
         <article class="chap" data-chapter="0">
           <div class="chap__media chap__media--video" data-depth="1.0">
-            <video class="chap__video" data-field muted loop playsinline preload="none" poster="assets/field-poster.webp" aria-label="Field footage of an industrial yard, silent">
-              <source src="assets/field.mp4" type="video/mp4">
+            <video class="chap__video" data-field muted loop playsinline preload="none" poster="static/media/field-poster.webp" aria-label="Field footage of an industrial yard, silent">
+              <source src="static/media/field.mp4" type="video/mp4">
             </video>
             <span class="media-tag">Field view / Truck yard</span>
             <span class="media-tag media-tag--br">Added people and classifications simulated</span>
@@ -397,13 +407,13 @@
               </div></div>
             </details>
           </div>
-          <figure class="chap__float" data-depth="1.35"><img src="assets/product-dismissed.webp" alt="Verdun console showing a clip auto-dismissed as non-threatening human activity" loading="lazy"><figcaption>Real product · Customer names changed</figcaption></figure>
+          <figure class="chap__float" data-depth="1.35"><img width="1600" height="900" src="static/media/product-dismissed.webp" alt="Verdun console showing a clip auto-dismissed as non-threatening human activity" loading="lazy"><figcaption>Real product · Customer names changed</figcaption></figure>
         </article>
 
         <!-- VERIFY -->
         <article class="chap" data-chapter="1">
           <div class="chap__media" data-depth="1.0">
-            <img src="assets/product-verify.webp" alt="Verdun operator view of a vehicle tampering event with clip, masking and AI overlay" loading="lazy">
+            <img width="1600" height="900" src="static/media/product-verify.webp" alt="Verdun operator view of a vehicle tampering event with clip, masking and AI overlay" loading="lazy">
             <span class="media-tag">Real product · Customer names changed</span>
           </div>
           <div class="chap__text" data-depth="0.7">
@@ -419,20 +429,20 @@
               </div></div>
             </details>
           </div>
-          <figure class="chap__float" data-depth="1.35"><img src="assets/product-protocol.webp" alt="Verdun console showing the camera’s protocol: incident routing, voice-down and auto-dismiss rules" loading="lazy"><figcaption>This camera’s protocol</figcaption></figure>
+          <figure class="chap__float" data-depth="1.35"><img width="1600" height="900" src="static/media/product-protocol.webp" alt="Verdun console showing the camera’s protocol: incident routing, voice-down and auto-dismiss rules" loading="lazy"><figcaption>This camera’s protocol</figcaption></figure>
         </article>
 
         <!-- RESPOND -->
         <article class="chap" data-chapter="2">
           <div class="chap__media" data-depth="1.0">
-            <img src="assets/product-response.webp" alt="Verdun operator console with clip, notification to property owner and agent settings" loading="lazy">
+            <img width="1600" height="900" src="static/media/product-response.webp" alt="Verdun operator console with clip, notification to property owner and agent settings" loading="lazy">
             <span class="media-tag">Real product · Customer names changed</span>
           </div>
           <div class="chap__text" data-depth="0.7">
             <span class="chap__n">03 / Respond</span>
             <h3>Put response in motion.</h3>
             <p>Our operators aren’t bogged down trying to clear a queue, so they pay real attention to your property.</p>
-            <a class="btn btn--blue chap__cta" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--blue chap__cta" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <details class="more" data-more>
               <summary><span>Details</span><i aria-hidden="true"></i></summary>
               <div class="more__body"><div class="more__inner">
@@ -441,7 +451,7 @@
               </div></div>
             </details>
           </div>
-          <figure class="chap__float" data-depth="1.35"><img src="assets/product-drafted.webp" alt="Verdun console with an update drafted by the agent for the property contact" loading="lazy"><figcaption>Drafted by the agent</figcaption></figure>
+          <figure class="chap__float" data-depth="1.35"><img width="1600" height="900" src="static/media/product-drafted.webp" alt="Verdun console with an update drafted by the agent for the property contact" loading="lazy"><figcaption>Drafted by the agent</figcaption></figure>
         </article>
       </div>
     </div>
@@ -459,7 +469,7 @@
     <figure class="field" data-field-view>
       <div class="field__frame">
         <canvas class="field__canvas" data-film2 aria-hidden="true"></canvas>
-        <img class="field__img" src="assets/warehouse.webp" alt="A warehouse perimeter illustrating the sites Verdun monitors" loading="lazy">
+        <img width="1672" height="941" class="field__img" src="static/media/warehouse.webp" alt="A warehouse perimeter illustrating the sites Verdun monitors" loading="lazy">
         <span class="media-tag">Field view / 04</span>
         <div class="field__card" data-field-card><svg><use href="#i-shield"/></svg><span>Context attached.<br>Ready for response.</span></div>
         <span class="media-tag media-tag--bl">Site imagery / Illustrative</span>
@@ -480,7 +490,7 @@
       <li><svg aria-hidden="true"><use href="#i-check"/></svg>Human-verified response</li>
       <li><svg aria-hidden="true"><use href="#i-check"/></svg>Site-specific protocols</li>
     </ul>
-    <a class="btn btn--blue" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--blue" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
@@ -502,7 +512,7 @@
     <article class="offer__item" data-reveal>
       <h3>Not ready yet?</h3>
       <p>When’s your contract up? Leave the date and we’ll reach out before it.</p>
-      <a class="text-link" href="get-started.html" data-demo>Leave your date <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="text-link" href="/get-started" data-demo>Leave your date <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </article>
   </div>
 </section>
@@ -526,12 +536,12 @@
       <span class="label" data-reveal>In context</span>
       <h2 class="display display--xl" id="product-title" data-split="lines">This is a <em>real product.</em></h2>
       <p class="lede lede--light" data-reveal>A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.</p>
-      <div class="btn-row" data-reveal><button class="btn btn--blue" type="button" data-open-film data-magnetic><svg aria-hidden="true"><use href="#i-play"/></svg><span>Watch intro video</span><small>2 min</small></button><a class="btn btn--ghost" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="btn-row" data-reveal><button class="btn btn--blue" type="button" data-open-film data-magnetic><svg aria-hidden="true"><use href="#i-play"/></svg><span>Watch intro video</span><small>2 min</small></button><a class="btn btn--ghost" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
     <div class="deck" data-deck aria-label="Product frames">
       <figure class="deck__card deck__card--film">
         <button type="button" class="deck__film" data-open-film aria-label="Watch the Verdun introduction film">
-          <img src="assets/garage.webp" alt="" loading="lazy">
+          <img width="1600" height="900" src="static/media/garage.webp" alt="" loading="lazy">
           <span class="deck__play"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
         </button>
         <figcaption><span>Verdun intro video</span><span>Illustrative scenario</span></figcaption>
@@ -549,7 +559,7 @@
     <h2 class="request__title" id="request-title" data-split="lines">Are your cameras actually being <em>monitored?</em></h2>
     <p class="request__lede" data-reveal>Let’s put Verdun to work.</p>
     <div class="request__actions" data-reveal>
-      <a class="btn btn--blue" href="get-started.html" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--blue" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       <a class="text-link" href="mailto:support@verdun.ai">support@verdun.ai</a>
     </div>
   </div>
@@ -563,10 +573,11 @@
       <a class="brand" href="#top"><svg class="brand__mark" aria-hidden="true"><use href="#i-mark"/></svg><span class="brand__word">verdun</span></a>
     </div>
     <nav class="footer__nav" aria-label="Company">
-      <a href="integrators.html">For integrators and security dealers</a>
-      <a href="get-started.html">Get started</a>
+      <a href="/integrators">For integrators and security dealers</a>
+      <a href="/get-started">Get started</a>
       <a href="#approach">How it works</a>
-      <a href="about.html">About</a>
+      <a href="/about">About</a>
+      <a href="/faq">Common questions</a>
       <a href="https://verdun.ai/essays">Essays</a>
       <a href="https://verdun.ai/careers">Careers</a>
       <a href="https://verdun.ai/sms-opt-in">SMS opt-in</a>
@@ -592,9 +603,9 @@
       <div><h2 id="film-title">Verdun intro video</h2><p>A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.</p></div>
       <button class="icon-btn" type="button" data-film-close aria-label="Close video"><svg><use href="#i-close"/></svg></button>
     </div>
-    <video class="film__video" controls playsinline preload="none" poster="assets/garage.webp" data-film-video>
+    <video class="film__video" controls playsinline preload="none" poster="static/media/garage.webp" data-film-video>
       <source src="https://verdun.ai/video/verdun-intro.mp4" type="video/mp4">
-      <track kind="captions" src="assets/verdun-intro.en.vtt" srclang="en" label="English" default>
+      <track kind="captions" src="static/media/verdun-intro.en.vtt" srclang="en" label="English" default>
     </video>
     <a class="film__fallback" href="https://verdun.ai/video/verdun-intro.mp4" target="_blank" rel="noopener">Open the film directly <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
@@ -603,12 +614,12 @@
 <!-- Section wipe (bar transition) -->
 <div class="wipe" data-wipe aria-hidden="true"></div>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
-<script src="vendor/SplitText.min.js"></script>
-<script src="vendor/CustomEase.min.js"></script>
-<script src="vendor/lenis.min.js"></script>
-<script type="module" src="js/main.js"></script>
-<script src="js/demo.js" defer></script>
+<script src="static/vendor/gsap.min.js"></script>
+<script src="static/vendor/ScrollTrigger.min.js"></script>
+<script src="static/vendor/SplitText.min.js"></script>
+<script src="static/vendor/CustomEase.min.js"></script>
+<script src="static/vendor/lenis.min.js"></script>
+<script type="module" src="static/js/main.js"></script>
+<script src="static/js/demo.js" defer></script>
 </body>
 </html>

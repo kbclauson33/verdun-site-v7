@@ -490,7 +490,7 @@ function initQueue() {
   const chip = $('[data-qchip]', root);
   const qlabel = $('[data-qlabel]', root);
   const sites = Object.fromEntries($$('.site', root).map((el) => [el.dataset.site, el]));
-  const SRC = { garage: 'assets/garage.webp', warehouse: 'assets/warehouse.webp', yard: 'assets/yard.webp', verify: 'assets/product-verify.webp' };
+  const SRC = { garage: 'static/media/garage.webp', warehouse: 'static/media/warehouse.webp', yard: 'static/media/yard.webp', verify: 'static/media/product-verify.webp' };
   const thumbs = { A: ['garage', '40% 40%'], B: ['warehouse', '30% 62%'], C: ['yard', '56% 74%'] };
   Object.entries(thumbs).forEach(([k, [img, pos]]) => {
     const t = $('.site__thumb', sites[k]);
@@ -739,7 +739,7 @@ function initProc() {
   const toggle = $('[data-video-toggle]');
   let userPaused = false;
 
-  loadImage('assets/warehouse.webp').then((img) => {
+  loadImage('static/media/warehouse.webp').then((img) => {
     const draw = () => {
       groundW = Math.round(window.innerWidth * 2.2);
       drawBarArt(ground, img, { width: groundW, height: Math.round(window.innerHeight * 0.34), col: 6, alpha: 0.5, gamma: 1.1, crop: [0, 0.18, 1, 0.82] });
@@ -809,7 +809,7 @@ function initPlatform() {
   const f2 = new BarFilm(canvas, { col: 5, ink: '#2f4e7a', inkHi: '#d6e8ff', bg: '#0c1119', gamma: 0.8, grain: 0.015 });
   if (!f2.ok) { canvas.remove(); return; }
   const st2 = { reveal: 0, sweep: 0, scan: -1 };
-  loadImage('assets/warehouse.webp').then((img) => {
+  loadImage('static/media/warehouse.webp').then((img) => {
     f2.setSource(img);
     frame.classList.add('is-gl');
     $('.field__img', frame).style.opacity = '0';
@@ -876,7 +876,7 @@ function initRequest() {
   const f3 = new BarFilm(canvas, { col: mqPhone.matches ? 6 : 8, ink: '#1f3456', inkHi: '#8bbcff', bg: '#080b10', gamma: 1.9, grain: 0, dpr: Math.min(window.devicePixelRatio || 1, 1.25) });
   if (!f3.ok) { canvas.remove(); return; }
   const s3 = { reveal: REDUCE ? 1 : 0, scan: -0.3, z: 1.18, x: 0.48 };
-  loadImage('assets/yard.webp').then((img) => {
+  loadImage('static/media/yard.webp').then((img) => {
     f3.setSource(img);
     f3.start();
     gsap.ticker.add(() => f3.set({ cam: [s3.x, 0.55, s3.z], bars: 1, reveal: s3.reveal, scan: REDUCE ? -1 : s3.scan }));
@@ -1008,7 +1008,7 @@ async function boot() {
   const skip = html.classList.contains('no-intro');
   if (!skip) lenis.stop();
   let img = null;
-  const imgP = loadImage('assets/yard.webp');
+  const imgP = loadImage('static/media/yard.webp');
   imgP.then((im) => { if (film.ok && !film.source) film.setSource(im); fallbackImg.style.opacity = ''; }).catch(() => {});
   try { img = await Promise.race([imgP, timeout(4500)]); } catch (e) { img = null; }
   try { await Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), timeout(1500)]); } catch (e) { /* continue */ }

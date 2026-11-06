@@ -1,0 +1,348 @@
+# Verdun: full site text
+
+Source: https://verdun.ai. Generated 2026-11-06.
+
+## Verdun | AI video monitoring with human operators
+URL: https://verdun.ai/
+
+Verdun | AI video monitoring with human operators
+Skip to content
+support@verdun.ai
+Replay opening
+01 / Person · truck cab
+02 / Vehicle · tractor unit
+type="button" data-skip>Skip intro
+Opening sequence: an industrial yard as a camera sees it. A person beside a truck, then the truck, then the whole property.
+AI video monitoring with human operators
+Y
+Backed by Y Combinator
+Most monitoring is a bet that nothing happens at your property.
+We built the world’s most advanced monitoring center so you don’t have to take that bet.
+Book a demo
+The problem
+You’re not getting the monitoring you think you are.
+The queue
+Wind. Rain. Shifting shadows. An employee walking to their car.
+A traditional monitoring center gets flooded with more alarms than people can get through.
+Today
+Illustrative
+Cameras + object detection
+Site A · Retail store 7 cameras
+Site B · Employee lot 6 cameras
+Site C · Truck yard 9 cameras
+Verdun AI agents
+Reasoning
+Clips sent for review
+0
+Legacy monitoring center · 3 operators
+Operator 1
+Idle
+Operator 2
+Idle
+Operator 3
+Idle
+One busy night at a legacy center
+Hiring takes months. Peaks take minutes.
+Silence busy sites Mute noisy cameras so fewer alarms reach the queue.
+You lose coverage
+Offshore the operators Cheaper seats in developing countries. The queue math is unchanged.
+Lower quality
+Charge for extra alarms Overage fees for every alarm past your plan.
+You pay more
+Every alarm reviewed in under 90 seconds.
+Time until an operator sees the alarm
+Legacy center · Peak hours
+20+ min
+Verdun
+under 90 s
+Both bars drawn to the same scale. Illustrative.
+01
+Traditional
+02
+Peak hours
+03
+More bodies
+04
+Verdun
+05
+The result
+01 / Traditional monitoring
+At a traditional center, every detection becomes a clip for a human to review.
+22 cameras across 3 sites. 3 human operators.
+How it works
+Traditional video monitoring runs object detection on each camera. People, moving vehicles and even wind-blown foliage become clips, and every clip goes to a monitoring center where a human operator reviews it for threats.
+22 cameras across 3 sites
+Every detection becomes a clip A retail store, employee lot and truck yard send activity for review.
+Routine activity
+Cashiers. Wind. Deliveries. Object detection flags activity without understanding why it is happening.
+Legacy monitoring center
+3 human operators Every clip needs their attention, including the routine ones.
+02 / Peak hours
+When activity spikes, the queue backs up and a real threat waits its turn.
+20+ min #20 in line. The threat is still waiting for an operator to open it.
+How it works
+During busy periods, routine clips pile up faster than operators can clear them. A real threat waits its turn behind all of them, and it often takes 20+ minutes before an operator even opens it.
+Incoming clips
+The queue keeps growing Routine detections arrive faster than the three operators can review them.
+Real threat · Site C
+Catalytic converter theft A theft in progress waits behind routine activity.
+Illustrative peak-hour backlog
+#20 in line · 20+ min The threat is still waiting for an operator to open it.
+03 / More bodies
+The only way they can fix that is more bodies, so your price keeps going up.
+You lose coverage. Lower quality. You pay more. In the meantime operators clear the queue as fast as they can and mute the cameras that seem low risk.
+How it works
+Monitoring centers can’t put more people in seats on demand. So they silence sites, offshore operators to developing countries, and charge more for extra alarms. None of it gets a real threat seen faster.
+Silence busy sites
+You lose coverage Muting noisy cameras reduces the queue by hiding activity.
+Offshore the operators
+Lower quality Cheaper seats do not add capacity on demand.
+Charge for extra alarms
+You pay more Overage fees do not get a real threat seen faster.
+04 / Verdun
+AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.
+0:38 A human sees the alarm in 0:38 in this example.
+How it works
+Verdun deploys AI agents that identify suspicious behavior, weigh the context, and reason about what they see. Only then do they pull up a live view and escalate to one of our human operators.
+Glare on a store door
+Dismiss Sees moving glare. Checks that the store is closed and no one is inside.
+Truck at the loading dock
+Log only Sees a truck backing in. Checks the scheduled overnight delivery.
+Person cutting under a truck
+Escalate · Voice down Checks that the yard is closed. Pulls live view; a human sees the alarm in 0:38 in this example.
+05 / The result
+An operator gets the clip, a live view, and your protocol on one screen.
+<90 s Every alarm reviewed in under 90 seconds.
+Book a demo
+How it works
+Because agents clear routine activity before it reaches a person, our operators only see what matters. Your alarms are always reviewed in under 90 seconds.
+Legacy center · Peak hours
+20+ minutes Routine alarms and real threats compete for the same operators.
+Verdun
+Under 90 seconds Agents review routine activity so real threats reach human operators.
+The illustrated Verdun queue
+1 alarm needs a human Wind and an employee leaving are dismissed. A scheduled delivery is logged. The theft is escalated.
+The bet usually pays off because incidents don’t happen every night.
+But they’re gambling with your property.
+The solution
+The world’s most advanced monitoring center.
+Tell us what you want to look for. Our AI looks for it and our human operators act on it.
+01 / Watch
+01
+02
+03
+Field view / Truck yard
+Added people and classifications simulated
+01 / Watch
+Automatic Scaling
+Coverage that doesn’t depend on a human keeping up.
+Details
+AI agents monitor every camera continuously. Attention doesn’t run out when activity picks up.
+Verdun’s AI agents keep watch across your sites, around the clock. Every camera gets attention, even when a barrage of events arrives at the same time.
+Camera activity
+Site context
+Operating schedule
+Continuous monitoring
+Real product · Customer names changed
+02 / Verify
+Understand the threat.
+The context to know what actually matters.
+Details
+AI looks at every clip and decides whether it needs a human, based on what you want monitored at your site. One site might be set up for a person with a gun, another for a person loitering.
+Environmental triggers and authorized activity are separated from real threats against your site’s protocol.
+Motion alone isn’t a threat. Verdun checks what happened against your response protocol so an operator receives a verified incident with the context to act.
+This camera’s protocol
+Real product · Customer names changed
+03 / Respond
+Put response in motion.
+Our operators aren’t bogged down trying to clear a queue, so they pay real attention to your property.
+Book a demo
+Details
+Our human operators are active 24/7 to review alerts. They call the police, text you about what’s going on, and send you reports. You also get a text line into our monitoring center, so you can text us at any time.
+When an agent escalates, the operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
+Drafted by the agent
+Technology
+The entire picture. The power to act.
+From the first signal to the final report. One platform connects detection, verification, and response across your sites.
+Field view / 04
+Context attached. Ready for response.
+Site imagery / Illustrative
+01
+Verified alarms
+Real threats checked against your site’s protocol before anyone is called.
+02
+Live talk-down
+Operators address intruders through on-site speakers, in real time.
+03
+Coordinated dispatch
+Guards, police, or on-call contacts receive the location, footage, and context.
+04
+A complete event record
+Every alarm, verification, and response is timestamped and auditable.
+05
+Your site. Your protocol.
+Arming schedules and response rules reflect how each property operates.
+06
+Every site, together
+One console across commercial, multifamily, and industrial properties.
+Continuous AI monitoring
+Human-verified response
+Site-specific protocols
+Book a demo
+Our offer
+We believe in what we have.
+$20,000 If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
+Free side by side
+If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts.
+You sign a simple MOU to come on with us when your contract ends if we prove it, and you get a discount for doing it.
+Not ready yet?
+When’s your contract up? Leave the date and we’ll reach out before it.
+Leave your date
+Tried AI analytics?
+Think of us less like a monitoring center and more like human enhanced AI analytics.
+Our team built some of the world’s most advanced video analytics and customers were still plagued by false alarms. You can’t rely on AI alone. It overwhelms your team and you end up managing the system instead of getting what you pictured.
+So we pit AI against AI. Our agents clear the noise. Our humans get what’s real and take action.
+In context
+This is a real product.
+A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.
+Watch intro video
+2 min Book a demo
+Verdun intro video
+Illustrative scenario
+Get in touch
+Are your cameras actually being monitored?
+Let’s put Verdun to work.
+Book a demo
+support@verdun.ai
+Verdun intro video
+A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.
+Open the film directly
+
+## About Verdun | Founding team
+URL: https://verdun.ai/about
+
+About Verdun | Founding team
+Skip to content
+support@verdun.ai
+Replay opening
+About Verdun
+Founding Team
+2 files · Backed by Y Combinator
+File 01
+Founding team
+Sonny Tai
+Co-Founder & CEO
+Former US Marine officer
+Founder of Actuate, a computer vision company for physical security
+Scaled Actuate to more than 110,000 cameras across 15,000+ customer sites
+Started Verdun to build an AI-native monitoring service
+University of Illinois at Urbana-Champaign · University of Chicago
+File 02
+Founding team
+Tung Hoang
+Co-Founder & CTO
+PhD in Applied Mathematics from the University of Illinois Chicago
+National Math Olympiad Gold Medalist
+Built Actuate’s first gun-detection AI model
+Senior AI engineering roles at LinkedIn, VergeSense, and WeWork
+Leads engineering and AI research at Verdun
+Book a demo
+Full bios on verdun.ai
+
+## Book a demo | Verdun
+URL: https://verdun.ai/get-started
+
+Book a demo | Verdun
+Skip to content
+support@verdun.ai
+Replay opening
+Get started
+Fill out this form and we’ll take it from there.
+01
+Tell us about your site.
+02
+Tell us what you want to look for.
+03
+Give us your deployment details: your current VMS and your cameras.
+04
+Get started. We hook up to your cameras and monitoring begins.
+Open the form
+support@verdun.ai
+Want to try us first?
+Start us at your next site with a 30 day pilot and nothing to cancel, whether you have monitoring today or not.
+Not ready yet?
+When’s your contract up? Leave the date and we’ll reach out before it.
+We believe in what we have
+If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
+
+## For integrators and security dealers | Verdun
+URL: https://verdun.ai/integrators
+
+For integrators and security dealers | Verdun
+Skip to content
+support@verdun.ai
+Replay opening
+For integrators and security dealers
+You install cameras and get paid once.
+Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
+Talk to us about your next site
+Real product · Customer names changed
+The problem
+Monitoring has never been reasonable for you to offer.
+You’d need your own central station or you’d resell someone else’s service on thin margin and put your reputation behind a process that’s based on muting alarms.
+What changed
+We built the world’s most advanced monitoring center.
+Our AI agents clear the noise, so monitoring doesn’t take nearly as many people. That’s where your margin comes from.
+We provide the service at a higher quality than monitoring in the past and you collect the MRR.
+Why you can put your name on it
+We’ll make you look good in front of your client.
+We’re not making a bet with your client’s property, muting alarms and hoping an incident doesn’t happen. Our AI agents clear the noise, so our operators see what matters and can pay real attention to the site.
+Our operators talk down intruders, call the police to your client’s property, communicate with you or your client by text, and send weekly reports.
+$20,000 If AI or human error causes a miss that leads to damage, we reimburse up to $20,000. We don’t go around you to your client.
+Who does what
+You
+The client relationship, the contract, billing, and deployment details.
+Us
+Connecting the cameras, monitoring, talk downs, police calls, and text messages.
+We keep you in the loop too. Weekly reports go to you as well as your client.
+Already have a monitoring partner? There’s nothing to migrate. Try us at your next site.
+The offer
+Sell us to a client at your next site for 30 days.
+No commitment, and you don’t pay us a split that month. See how good we make you look.
+Talk to us about your next site
+
+## Common questions | Verdun
+URL: https://verdun.ai/faq
+
+Common questions | Verdun
+Skip to content
+support@verdun.ai
+Replay opening
+Common questions
+How Verdun works.
+What is Verdun?
+Verdun is a remote video monitoring service, backed by Y Combinator. AI agents review every alarm. Trained operators respond to real threats. We built the world’s most advanced monitoring center.
+How is Verdun different from traditional video monitoring?
+At a traditional center, every detection becomes a clip for a human to review. When activity spikes, the queue backs up and a real threat waits its turn. At Verdun, AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.
+How fast does an operator see a real threat?
+Every alarm is reviewed in under 90 seconds. At a traditional center during peak hours, a real threat can wait 20+ minutes before an operator even opens it.
+Can I choose what Verdun looks for?
+Yes. Tell us what you want to look for. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.
+What happens when there is a real threat?
+Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
+Are Verdun’s operators available around the clock?
+Our human operators are active 24/7 to review alerts. They aren’t bogged down trying to clear a queue, so they pay real attention to your property.
+What kinds of properties does Verdun monitor?
+One console across commercial, multifamily, and industrial properties.
+Does Verdun work with my existing cameras?
+Give us your deployment details: your current VMS and your cameras. We hook up to your cameras and monitoring begins.
+What if Verdun misses something?
+If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
+Can I try Verdun before switching?
+If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30 day pilot and nothing to cancel.
+Do you work with integrators and security dealers?
+Yes. Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
+Who founded Verdun?
+Verdun was founded by Sonny Tai, a former US Marine officer and the founder of Actuate, and Tung Hoang, who holds a PhD in Applied Mathematics and built Actuate’s first gun-detection AI model.
+Book a demo
+support@verdun.ai

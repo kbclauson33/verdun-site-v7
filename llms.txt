@@ -1,0 +1,36 @@
+# Verdun
+
+> Verdun is a remote video monitoring service, backed by Y Combinator. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down, dispatch, and notification. "We built the world’s most advanced monitoring center."
+
+Verdun (Enari Inc., dba Verdun) monitors commercial, multifamily, and industrial properties. Customers tell Verdun what to look for. AI agents watch every camera, dismiss the noise, log what’s routine, and escalate what’s real to human operators, who talk down intruders through on-site speakers, dispatch police or guards, and notify the customer.
+
+## Pages
+
+- [Home](https://verdun.ai/): how Verdun’s AI agents and human operators replace the traditional monitoring queue
+- [Book a demo](https://verdun.ai/get-started): how to get started, in four steps, and the 30 day pilot
+- [For integrators and security dealers](https://verdun.ai/integrators): add monthly recurring revenue to every camera you install, with your name on the contract
+- [Common questions](https://verdun.ai/faq): plain answers about how Verdun works
+- [About](https://verdun.ai/about): founding team, Sonny Tai (CEO) and Tung Hoang (CTO)
+- [Essay: Traditional video monitoring is badly broken](https://verdun.ai/essays/traditional-video-monitoring-is-badly-broken): Sonny Tai on why the monitoring industry is structurally broken
+- [Careers](https://verdun.ai/careers): open roles
+
+## Common questions
+
+- **What is Verdun?** Verdun is a remote video monitoring service, backed by Y Combinator. AI agents review every alarm. Trained operators respond to real threats. We built the world’s most advanced monitoring center.
+- **How is Verdun different from traditional video monitoring?** At a traditional center, every detection becomes a clip for a human to review. When activity spikes, the queue backs up and a real threat waits its turn. At Verdun, AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.
+- **How fast does an operator see a real threat?** Every alarm is reviewed in under 90 seconds. At a traditional center during peak hours, a real threat can wait 20+ minutes before an operator even opens it.
+- **Can I choose what Verdun looks for?** Yes. Tell us what you want to look for. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.
+- **What happens when there is a real threat?** Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
+- **Are Verdun’s operators available around the clock?** Our human operators are active 24/7 to review alerts. They aren’t bogged down trying to clear a queue, so they pay real attention to your property.
+- **What kinds of properties does Verdun monitor?** One console across commercial, multifamily, and industrial properties.
+- **Does Verdun work with my existing cameras?** Give us your deployment details: your current VMS and your cameras. We hook up to your cameras and monitoring begins.
+- **What if Verdun misses something?** If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
+- **Can I try Verdun before switching?** If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30 day pilot and nothing to cancel.
+- **Do you work with integrators and security dealers?** Yes. Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
+- **Who founded Verdun?** Verdun was founded by Sonny Tai, a former US Marine officer and the founder of Actuate, and Tung Hoang, who holds a PhD in Applied Mathematics and built Actuate’s first gun-detection AI model.
+
+## Contact
+
+- Email: support@verdun.ai
+- Book a demo: https://verdun.ai/get-started
+- Full text of the site: https://verdun.ai/llms-full.txt

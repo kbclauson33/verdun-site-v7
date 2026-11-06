@@ -1,0 +1,20 @@
+{
+  "name": "Verdun",
+  "short_name": "Verdun",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#080b10",
+  "theme_color": "#080b10",
+  "icons": [
+    {
+      "src": "/static/media/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/media/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -133,6 +133,8 @@
       const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
       if (!r.ok) throw new Error(String(r.status));
       form.hidden = true; done.hidden = false; done.focus({ preventScroll: true });
+      // Google Ads: count the lead. Add a send_to conversion label here once one exists in Google Ads.
+      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: 'book_a_demo' });
     } catch (x) {
       err.innerHTML = `We couldn’t send this just now. <a href="${mailtoFallback(d)}">Email it to us instead</a> and it goes straight to the team.`;
       err.hidden = false;

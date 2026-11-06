@@ -9,6 +9,7 @@
 
   const lenis = new Lenis({ lerp: REDUCE ? 1 : 0.085, smoothWheel: !REDUCE });
   lenis.on('scroll', ScrollTrigger.update);
+  window.__lenis = lenis;
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
 

@@ -171,6 +171,7 @@ function renderHero() {
 gsap.ticker.add(() => { if (heroVisible) renderHero(); });
 
 function placeCard(res) {
+  if (!card) return;
   const p = pinEls[activeDemo];
   if (!p || p._x == null) return;
   const w = card.offsetWidth || 272, h = card.offsetHeight || 150;
@@ -187,6 +188,7 @@ function showDemo(i) {
   activeDemo = i;
   const d = DEMOS[i];
   pinEls.forEach((p, j) => p.classList.toggle('is-active', j === i));
+  if (!card) return;
   const inner = [$('[data-ev-where]', card), $('[data-ev-title]', card), $('[data-ev-tag]', card), $('[data-ev-text]', card)];
   gsap.to(inner, {
     opacity: 0, y: -6, duration: 0.25, stagger: 0.03, ease: 'power2.in',
@@ -815,7 +817,7 @@ function initPlatform() {
 /* Ticker that responds to scroll velocity */
 function initTicker() {
   const t = $('[data-ticker]');
-  if (REDUCE) return;
+  if (!t || REDUCE) return;
   const tw = gsap.to(t, { xPercent: -50, duration: 26, ease: 'none', repeat: -1 });
   let boost = 1;
   lenis.on('scroll', (e) => { boost = 1 + Math.min(5, Math.abs(e.velocity) * 0.25); });
@@ -971,6 +973,29 @@ if (FINE && !REDUCE) {
   });
 }
 
+/* Toggles: smooth open/close for <details data-more> */
+function initToggles() {
+  $$('details[data-more]').forEach((d) => {
+    const sum = $('summary', d);
+    const body = $('.more__body', d);
+    sum.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (d._busy) return;
+      d._busy = true;
+      const done = () => { d._busy = false; ScrollTrigger.refresh(); };
+      if (!d.open) {
+        d.open = true;
+        if (REDUCE) { done(); return; }
+        gsap.fromTo(body, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.65, ease: 'vOut', onComplete: () => { gsap.set(body, { clearProps: 'height,opacity' }); done(); } });
+        gsap.fromTo($$('.more__inner > *', d), { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.05, ease: 'vOut', delay: 0.05 });
+      } else {
+        if (REDUCE) { d.open = false; done(); return; }
+        gsap.to(body, { height: 0, opacity: 0, duration: 0.45, ease: 'power2.inOut', onComplete: () => { d.open = false; gsap.set(body, { clearProps: 'height,opacity' }); done(); } });
+      }
+    });
+  });
+}
+
 /* ------------------------------------------------------------------ */
 /* Boot                                                                */
 /* ------------------------------------------------------------------ */
@@ -997,6 +1022,7 @@ async function boot() {
   initTeam();
   initRequest();
   initFooter();
+  initToggles();
   if (skip || !img) finalizeNow();
   else playIntro();
   if (params.get('scene') === 'site') { if (intro) intro.progress(1); }

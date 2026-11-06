@@ -889,7 +889,7 @@ ScrollTrigger.create({
     const y = self.scroll();
     header.classList.toggle('is-hidden', self.direction === 1 && y > window.innerHeight * 0.5 && $('#menu').hidden);
     header.classList.toggle('is-solid', y > window.innerHeight * 1.2);
-    pill.classList.toggle('is-in', y > window.innerHeight * 1.4);
+    pill && pill.classList.toggle('is-in', y > window.innerHeight * 1.4);
   },
 });
 
@@ -932,17 +932,6 @@ menu.addEventListener('keydown', (e) => {
     else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
   }
 });
-
-const pop = $('[data-cake-pop]');
-function togglePop(open) {
-  pop.hidden = !open;
-  pill.setAttribute('aria-expanded', String(open));
-  if (open) { gsap.fromTo(pop, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'vOut' }); $('a', pop).focus(); }
-}
-pill.addEventListener('click', () => togglePop(pop.hidden));
-$('[data-cake-close]').addEventListener('click', () => { togglePop(false); pill.focus(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) { togglePop(false); pill.focus(); } });
-document.addEventListener('pointerdown', (e) => { if (!pop.hidden && !pop.contains(e.target) && !pill.contains(e.target)) togglePop(false); });
 
 const dlg = $('[data-film-dialog]');
 const filmVideo = $('[data-film-video]');

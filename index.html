@@ -73,7 +73,6 @@
   <nav class="nav" aria-label="Primary">
     <a href="#approach">Our approach</a>
     <a href="#platform">Technology</a>
-    <a href="#cake">Cake offer</a>
     <a href="about.html">About</a>
     <a href="https://verdun.ai/essays">Essays</a>
     <a href="https://verdun.ai/careers">Careers</a>
@@ -100,11 +99,10 @@
     <ol class="menu__list">
       <li><a href="#approach"><span class="menu__n">01</span><span class="menu__t">Our approach</span></a></li>
       <li><a href="#platform"><span class="menu__n">02</span><span class="menu__t">Technology</span></a></li>
-      <li><a href="#cake"><span class="menu__n">03</span><span class="menu__t">Cake offer</span></a></li>
-      <li><a href="about.html"><span class="menu__n">04</span><span class="menu__t">About</span></a></li>
-      <li><a href="https://verdun.ai/essays"><span class="menu__n">05</span><span class="menu__t">Essays</span></a></li>
-      <li><a href="https://verdun.ai/careers"><span class="menu__n">06</span><span class="menu__t">Careers</span></a></li>
-      <li><a href="https://verdun.ai/#request"><span class="menu__n">07</span><span class="menu__t">Book a demo</span></a></li>
+      <li><a href="about.html"><span class="menu__n">03</span><span class="menu__t">About</span></a></li>
+      <li><a href="https://verdun.ai/essays"><span class="menu__n">04</span><span class="menu__t">Essays</span></a></li>
+      <li><a href="https://verdun.ai/careers"><span class="menu__n">05</span><span class="menu__t">Careers</span></a></li>
+      <li><a href="https://verdun.ai/#request"><span class="menu__n">06</span><span class="menu__t">Book a demo</span></a></li>
     </ol>
     <div class="menu__foot">
       <a href="mailto:support@verdun.ai">support@verdun.ai</a>
@@ -179,20 +177,9 @@
             We built the world’s most advanced <em>monitoring center.</em>
           </h1>
           <div class="hero__aside" data-hero-in>
-            <p class="hero__sub">A remote video monitoring service.<br>AI agents review every alarm.<br>Trained operators respond to real threats.</p>
-            <button class="ring-btn" type="button" data-open-film data-magnetic>
-              <svg class="ring-btn__text" viewBox="0 0 120 120" aria-hidden="true">
-                <path id="ringpath" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0" fill="none"/>
-                <text><textPath href="#ringpath">WATCH INTRO VIDEO · 2 MIN · CAPTIONED · </textPath></text>
-              </svg>
-              <span class="ring-btn__core"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
-              <span class="sr-only">Watch intro video</span>
-            </button>
+            <p class="hero__sub"><b>AI watches.</b> <em>Humans respond.</em></p>
+            <a class="btn btn--blue" href="https://verdun.ai/#request" data-magnetic><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
-        </div>
-        <div class="hero__credits" data-hero-in>
-          <span class="label">OpsView / Illustrative demo</span>
-          <span class="label">Eric Skaggs / Pexels · Added people and classifications simulated</span>
         </div>
       </div>
 
@@ -370,7 +357,7 @@
   <div class="wrap approach__head">
     <span class="label" data-reveal>02 / Our approach</span>
     <h2 class="display display--xl" id="approach-title" data-split="lines">Intelligence at scale. <em>Action in the moment.</em></h2>
-    <p class="lede lede--light" data-reveal>We rebuilt monitoring around AI agents that watch and verify, and human operators who respond. Real threats get attention without being buried in routine activity.</p>
+    <p class="lede lede--light" data-reveal>Agents clear the noise. Operators act on what’s real.</p>
   </div>
 
   <div class="proc" data-proc>
@@ -400,12 +387,14 @@
           <div class="chap__text" data-depth="0.7">
             <span class="chap__n">01 / Watch</span>
             <h3>Every camera, always watched.</h3>
-            <p>AI agents monitor every camera continuously. Attention doesn’t run out when activity picks up.</p>
-            <div class="chap__detail">
-              <h4>Coverage that doesn’t depend on a human keeping up.</h4>
-              <p>Verdun’s AI agents keep watch across your sites, around the clock. Every camera gets attention, even when a barrage of events arrives at the same time.</p>
-              <div class="flow"><span>Camera activity</span><span>Site context</span><span>Operating schedule</span><svg aria-hidden="true"><use href="#i-arrow-r"/></svg><b>Continuous monitoring</b></div>
-            </div>
+            <p>Attention that never runs out.</p>
+            <details class="more" data-more>
+              <summary><span>Details</span><i aria-hidden="true"></i></summary>
+              <div class="more__body"><div class="more__inner">
+                <p>AI agents monitor every camera continuously. Attention doesn’t run out when activity picks up. Verdun’s AI agents keep watch across your sites, around the clock, even when a barrage of events arrives at the same time.</p>
+                <div class="flow"><span>Camera activity</span><span>Site context</span><span>Operating schedule</span><svg aria-hidden="true"><use href="#i-arrow-r"/></svg><b>Continuous monitoring</b></div>
+              </div></div>
+            </details>
           </div>
           <figure class="chap__float" data-depth="1.35"><img src="assets/product-dismissed.webp" alt="Verdun console showing a clip auto-dismissed as non-threatening human activity" loading="lazy"><figcaption>Real product · Customer names changed</figcaption></figure>
         </article>
@@ -419,11 +408,13 @@
           <div class="chap__text" data-depth="0.7">
             <span class="chap__n">02 / Verify</span>
             <h3>Understand the threat.</h3>
-            <p>Environmental triggers and authorized activity are separated from real threats against your site’s protocol.</p>
-            <div class="chap__detail">
-              <h4>The context to know what actually matters.</h4>
-              <p>Motion alone isn’t a threat. Verdun checks what happened against your response protocol so an operator receives a verified incident with the context to act.</p>
-            </div>
+            <p>Motion alone isn’t a threat.</p>
+            <details class="more" data-more>
+              <summary><span>Details</span><i aria-hidden="true"></i></summary>
+              <div class="more__body"><div class="more__inner">
+                <p>Environmental triggers and authorized activity are separated from real threats against your site’s protocol. Verdun checks what happened against your response protocol so an operator receives a verified incident with the context to act.</p>
+              </div></div>
+            </details>
           </div>
           <figure class="chap__float" data-depth="1.35"><img src="assets/product-protocol.webp" alt="Verdun console showing the camera's protocol: incident routing, voice-down and auto-dismiss rules" loading="lazy"><figcaption>This camera’s protocol</figcaption></figure>
         </article>
@@ -437,12 +428,14 @@
           <div class="chap__text" data-depth="0.7">
             <span class="chap__n">03 / Respond</span>
             <h3>Put response in motion.</h3>
-            <p>Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification.</p>
+            <p>A trained operator on every real threat.</p>
             <a class="btn btn--blue chap__cta" href="https://verdun.ai/#request" data-magnetic><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <div class="chap__detail">
-              <h4>A trained operator on every real threat.</h4>
-              <p>When an agent escalates, the operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.</p>
-            </div>
+            <details class="more" data-more>
+              <summary><span>Details</span><i aria-hidden="true"></i></summary>
+              <div class="more__body"><div class="more__inner">
+                <p>Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen, then talks down intruders through on-site speakers, dispatches police or guards, and sends your team an update the agent has already drafted.</p>
+              </div></div>
+            </details>
           </div>
           <figure class="chap__float" data-depth="1.35"><img src="assets/product-drafted.webp" alt="Verdun console with an update drafted by the agent for the property contact" loading="lazy"><figcaption>Drafted by the agent</figcaption></figure>
         </article>
@@ -511,26 +504,6 @@
   </div>
 </section>
 
-<!-- ============ CAKE OFFER ============ -->
-<section class="cake" id="cake" aria-labelledby="cake-title">
-  <div class="wrap cake__inner">
-    <div class="cake__copy">
-      <span class="label label--ink" data-reveal><svg class="i-inline"><use href="#i-cake"/></svg> A sweet introduction</span>
-      <h2 class="display display--ink" id="cake-title" data-split="lines">Received a cake <em>from us?</em></h2>
-      <p class="cake__lede" data-reveal>Upload a pic and get <b>1 month of free monitoring.</b></p>
-      <div class="cake__actions" data-reveal>
-        <a class="btn btn--ink" href="https://verdun.ai/#cake-offer" data-magnetic><span>Claim your free month</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="text-link text-link--ink" href="https://verdun.ai/#cake-offer">Didn’t get a cake? Gift one →</a>
-      </div>
-    </div>
-    <dl class="cake__terms" data-reveal>
-      <div><dt>A thank-you for you</dt><dd>Send a photo of your cake with your name, email and company. Our team will email you to arrange your free month and get your site set up.</dd></div>
-      <div><dt>Gift a cake</dt><dd>Gift a cake to a business that’s a good fit for Verdun monitoring. Once they take a meeting with us, you get a $100 Amazon gift card and they get 1 month of free monitoring.</dd></div>
-      <div><dt>Conditions</dt><dd>Commercial addresses only. No residential deliveries. We’ll review the business and commercial delivery address before sending. Claims and referrals continue on verdun.ai.</dd></div>
-    </dl>
-  </div>
-</section>
-
 <!-- ============ CONTACT ============ -->
 <section class="request" id="request" aria-labelledby="request-title">
   <canvas class="request__canvas" data-film3 aria-hidden="true"></canvas>
@@ -565,23 +538,13 @@
     <div class="footer__end">
       <button type="button" class="link-btn" data-replay>Replay opening ↺</button>
       <span class="label">© 2026 Enari Inc. (dba Verdun)</span>
+      <span class="label footer__fine">Hero imagery: Eric Skaggs / Pexels · Added people and classifications simulated</span>
     </div>
   </div>
   <div class="footer__mark" data-footer-mark aria-hidden="true">
     <svg viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid meet"><text x="0" y="200" fill="url(#stripes)" filter="url(#jag)" data-wm-text>verdun</text></svg>
   </div>
 </footer>
-
-<!-- Floating cake launcher -->
-<button class="cake-pill" type="button" data-cake-open aria-haspopup="dialog"><svg aria-hidden="true"><use href="#i-cake"/></svg><span>Received a cake?</span></button>
-<div class="pop" id="cake-pop" role="dialog" aria-modal="false" aria-labelledby="cake-pop-title" hidden data-cake-pop>
-  <button class="icon-btn pop__close" type="button" data-cake-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
-  <span class="label label--blue"><svg class="i-inline"><use href="#i-cake"/></svg> A sweet introduction</span>
-  <h3 id="cake-pop-title">Received a cake from us?</h3>
-  <p>Upload a pic and get <b>1 month of free monitoring.</b></p>
-  <a class="btn btn--ghost" href="https://verdun.ai/#cake-offer"><span>Claim your free month</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="text-link" href="https://verdun.ai/#cake-offer">Didn’t get a cake? Gift one →</a>
-</div>
 
 <!-- Intro film dialog -->
 <dialog class="film" data-film-dialog aria-labelledby="film-title">

@@ -518,9 +518,9 @@ function initQueue() {
     { l: 'Person cutting under a truck', s: 'C', img: 'yard', pos: '57% 80%', out: 'Escalate · Voice down', cls: 'is-esc', threat: true },
   ];
   const P = [
-    { every: 1.7, review: 2.4, chip: 'Today', label: 'Clips sent for review' },
+    { every: 1.7, review: 2.4, chip: 'Traditional', label: 'Clips sent for review' },
     { every: 0.32, review: 3.2, chip: 'Peak hours', label: 'Clips sent for review' },
-    { every: 99, review: 99, chip: 'Workarounds', label: 'Clips sent for review', paused: true },
+    { every: 99, review: 99, chip: 'More bodies', label: 'Clips sent for review', paused: true },
     { every: 1.05, review: 1.6, chip: 'Verdun', label: 'Agent review', agents: true },
     { every: 1.25, review: 1.6, chip: 'The result', label: 'Agent review', agents: true },
   ];

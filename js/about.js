@@ -66,8 +66,14 @@
 
   if (REDUCE) return;
 
+  // Generic reveals for sub pages.
+  const rev = $$('.page [data-reveal]');
+  if (rev.length) {
+    gsap.set(rev, { opacity: 0, y: 26 });
+    ScrollTrigger.batch(rev, { start: 'top 92%', once: true, onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1.05, stagger: 0.08, ease }) });
+  }
   // Dossier: files slide in, photos form from vertical bars, bullets type in.
-  gsap.from('.dossier__head > *', { y: 24, opacity: 0, duration: 1.1, stagger: 0.08, ease, delay: 0.1 });
+  if ($('.dossier__head')) gsap.from('.dossier__head > *', { y: 24, opacity: 0, duration: 1.1, stagger: 0.08, ease, delay: 0.1 });
   $$('.file').forEach((f, i) => {
     const tl = gsap.timeline({ delay: 0.35 + i * 0.18 });
     tl.from(f, { y: 40, opacity: 0, duration: 1.1, ease })
@@ -75,6 +81,6 @@
       .from($$('.file__photo .c', f), { scale: 1.8, opacity: 0, duration: 0.7, stagger: 0.05, ease }, 0.3)
       .from($$('.file__list li', f), { x: -14, opacity: 0, duration: 0.7, stagger: 0.07, ease }, 0.45);
   });
-  gsap.from('.dossier__foot', { y: 20, opacity: 0, duration: 1, ease, scrollTrigger: { trigger: '.dossier__foot', start: 'top 95%', once: true } });
+  if ($('.dossier__foot')) gsap.from('.dossier__foot', { y: 20, opacity: 0, duration: 1, ease, scrollTrigger: { trigger: '.dossier__foot', start: 'top 95%', once: true } });
   gsap.fromTo('#jag feDisplacementMap', { attr: { scale: 200 } }, { attr: { scale: 9 }, ease: 'none', scrollTrigger: { trigger: '.footer', start: 'top bottom', end: 'bottom bottom', scrub: 0.5 } });
 })();

@@ -1027,6 +1027,11 @@ async function boot() {
   else playIntro();
   if (params.get('scene') === 'site') { if (intro) intro.progress(1); }
   ScrollTrigger.refresh();
+  // Arriving from another page with a section link: skip the opening and go there.
+  if (location.hash.length > 1) {
+    const target = document.querySelector(location.hash);
+    if (target) setTimeout(() => scrollToTarget(target, { duration: 0.01, offset: -20 }), 120);
+  }
   window.__verdun = { intro: () => intro, lenis, film, cam, fx, rect };
 }
 boot();

@@ -22,7 +22,7 @@
     var d = document.documentElement, q = location.search;
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     d.classList.add('js');
-    if (reduce || /[?&]skip/.test(q)) d.classList.add('no-intro');
+    if (reduce || /[?&]skip/.test(q) || (location.hash && location.hash.length > 1)) d.classList.add('no-intro');
     else d.classList.add('intro-pending');
     if (reduce) d.classList.add('reduce-motion');
     // ?timers: drive animation from timers (for automated review in a hidden browser pane).
@@ -74,7 +74,7 @@
     <a href="#approach">Our approach</a>
     <a href="#platform">Technology</a>
     <a href="#cake">Cake offer</a>
-    <a href="#team">Leadership</a>
+    <a href="about.html">About</a>
     <a href="https://verdun.ai/essays">Essays</a>
     <a href="https://verdun.ai/careers">Careers</a>
   </nav>
@@ -101,7 +101,7 @@
       <li><a href="#approach"><span class="menu__n">01</span><span class="menu__t">Our approach</span></a></li>
       <li><a href="#platform"><span class="menu__n">02</span><span class="menu__t">Technology</span></a></li>
       <li><a href="#cake"><span class="menu__n">03</span><span class="menu__t">Cake offer</span></a></li>
-      <li><a href="#team"><span class="menu__n">04</span><span class="menu__t">Leadership</span></a></li>
+      <li><a href="about.html"><span class="menu__n">04</span><span class="menu__t">About</span></a></li>
       <li><a href="https://verdun.ai/essays"><span class="menu__n">05</span><span class="menu__t">Essays</span></a></li>
       <li><a href="https://verdun.ai/careers"><span class="menu__n">06</span><span class="menu__t">Careers</span></a></li>
       <li><a href="https://verdun.ai/#request"><span class="menu__n">07</span><span class="menu__t">Book a demo</span></a></li>
@@ -511,37 +511,6 @@
   </div>
 </section>
 
-<!-- ============ TEAM ============ -->
-<section class="team" id="team" aria-labelledby="team-title">
-  <div class="wrap team__head">
-    <span class="label" data-reveal>05 / Executive team</span>
-    <h2 class="display display--xl" id="team-title" data-split="lines">The people <em>behind the system.</em></h2>
-  </div>
-  <div class="wrap team__grid">
-    <article class="person" data-person>
-      <div class="person__photo" data-bars-img><img src="assets/sonny.webp" alt="Sonny Tai" loading="lazy"></div>
-      <div class="person__body">
-        <span class="label">Co-Founder &amp; CEO</span>
-        <h3>Sonny Tai</h3>
-        <p>Sonny is a former US Marine officer and the founder of Actuate, a computer vision company for physical security. He scaled Actuate to more than 110,000 cameras across 15,000+ customer sites.</p>
-        <p>He started Verdun to build an AI-native monitoring service that brings together deep expertise in AI engineering and agentic workflows with the operational complexities of running a 24/7 monitoring service.</p>
-        <p>Sonny holds degrees from the University of Illinois at Urbana-Champaign (Go Illini!) and the University of Chicago.</p>
-      </div>
-    </article>
-    <article class="person person--offset" data-person>
-      <div class="person__photo" data-bars-img><img src="assets/tung.webp" alt="Tung Hoang" loading="lazy"></div>
-      <div class="person__body">
-        <span class="label">Co-Founder &amp; CTO</span>
-        <h3>Tung Hoang</h3>
-        <p>Tung holds a PhD in Applied Mathematics from the University of Illinois Chicago and was a National Math Olympiad Gold Medalist.</p>
-        <p>He worked with Sonny in Actuate’s early days, building its first gun-detection AI model. He then held senior AI engineering roles at LinkedIn, VergeSense, and WeWork before coming full circle to co-found Verdun with Sonny.</p>
-        <p>At Verdun, Tung leads engineering and AI research, building the agents that autonomously evaluate camera footage and reason about what they see before escalating real threats to our operators.</p>
-      </div>
-    </article>
-  </div>
-  <div class="wrap team__link" data-reveal><a class="text-link" href="https://verdun.ai/leadership">Leadership <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-</section>
-
 <!-- ============ CAKE OFFER ============ -->
 <section class="cake" id="cake" aria-labelledby="cake-title">
   <div class="wrap cake__inner">
@@ -585,7 +554,7 @@
       <a class="brand" href="#top"><svg class="brand__mark" aria-hidden="true"><use href="#i-mark"/></svg><span class="brand__word">verdun</span></a>
     </div>
     <nav class="footer__nav" aria-label="Company">
-      <a href="https://verdun.ai/leadership">Leadership</a>
+      <a href="about.html">About</a>
       <a href="https://verdun.ai/essays">Essays</a>
       <a href="https://verdun.ai/careers">Careers</a>
       <a href="https://verdun.ai/sms-opt-in">SMS opt-in</a>

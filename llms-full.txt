@@ -1,20 +1,12 @@
 # Verdun: full site text
 
-Source: https://verdun.ai. Generated 2026-11-06.
+Source: https://verdun.ai. Generated 2026-11-07.
 
 ## Verdun | AI video monitoring with human operators
 URL: https://verdun.ai/
 
-Verdun | AI video monitoring with human operators
-Skip to content
-support@verdun.ai
-Replay opening
-01 / Person · truck cab
-02 / Vehicle · tractor unit
-type="button" data-skip>Skip intro
 Opening sequence: an industrial yard as a camera sees it. A person beside a truck, then the truck, then the whole property.
 AI video monitoring with human operators
-Y
 Backed by Y Combinator
 Most monitoring tells you what already happened.
 We built the world’s most advanced monitoring center to catch relevant activity while it’s still happening.
@@ -31,26 +23,6 @@ Operators silence busy cameras and bet nothing happens.
 03
 Your price keeps going up.
 Their only fix is more bodies.
-Legacy monitoring center
-In queue 147
-Oldest waiting 20+ min
-20+ min before an operator opens the real threat
-verdun
-In queue 0
-Retail store 7 cameras · Monitored
-Employee lot 6 cameras · Monitored
-Truck yard 9 cameras · Monitored
-AI agents · reviewing in parallel
-Escalated · Truck yard · Cam 07
-Person cutting under a truck
-Talked down on the site speaker
-Police called
-Owner notified by text
-Legacy center · Peak hours
-20+ min
-Verdun
-under 90 s
-Time until a human sees the real threat. Same scale.
 Illustrative
 01
 Traditional
@@ -60,41 +32,40 @@ Our solution
 The result
 Traditional monitoring
 When activity spikes, the queue backs up and a real threat waits its turn.
-20+ min #20 in line. The threat is still waiting for an operator to open it.
+20+ min#20 in line. The threat is still waiting for an operator to open it.
 How it works
 During busy periods, routine clips pile up faster than operators can clear them. A real threat waits its turn behind all of them, and it often takes 20+ minutes before an operator even opens it.
 Routine activity
-Cashiers. Wind. Deliveries. Object detection flags activity without understanding why it is happening.
+Cashiers. Wind. Deliveries.Object detection flags activity without understanding why it is happening.
 Muted cameras
-You lose coverage Operators silence busy cameras so fewer alarms reach the queue.
+You lose coverageOperators silence busy cameras so fewer alarms reach the queue.
 Real threat · Truck yard
-#20 in line · 20+ min A theft in progress waits behind routine activity.
+#20 in line · 20+ minA theft in progress waits behind routine activity.
 Our solution
 The world’s most advanced monitoring center.
 AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain.
-0Q
 Zero in queue
 Humans get to focus on real incidents, not clearing false alarms.
 How it works
 Verdun deploys AI agents that identify suspicious behavior, weigh the context, and reason about what they see. Only then do they pull up a live view and escalate to one of our human operators.
 Glare on a store door
-Dismiss Sees moving glare. Checks that the store is closed and no one is inside.
+DismissSees moving glare. Checks that the store is closed and no one is inside.
 Truck at the loading dock
-Log only Sees a truck backing in. Checks the scheduled overnight delivery.
+Log onlySees a truck backing in. Checks the scheduled overnight delivery.
 Person cutting under a truck
-Escalate · Voice down Checks that the yard is closed. Pulls live view and hands it to a human operator.
+Escalate · Voice-downChecks that the yard is closed. Pulls live view and hands it to a human operator.
 The result
-Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.
-<90 s Anything real or uncertain is reviewed by a human in under 90 seconds.
+Human operators talk down the threat, call the police, and notify other relevant parties by call, text, or email.
+<90 sAnything real or uncertain is reviewed by a human in under 90 seconds.
 Book a demo
 How it works
 Because agents clear routine activity before it reaches a person, our operators only see what matters. Anything real or uncertain reaches a human in under 90 seconds.
 Legacy center · Peak hours
-20+ minutes Routine alarms and real threats compete for the same operators.
+20+ minutesRoutine alarms and real threats compete for the same operators.
 Verdun
-Under 90 seconds Agents review routine activity so real threats reach human operators.
+Under 90 secondsAgents review routine activity so real threats reach human operators.
 When it’s real
-Talk-down, police, updates Operators speak through on-site speakers, dispatch police or guards, and text or email your team.
+Talk-down, police, updatesOperators speak through on-site speakers, dispatch police or guards, and text or email your team.
 What you get
 01
 Live talk-down
@@ -121,28 +92,6 @@ Getting started
 Step 01
 Tell us what you want to monitor for.
 Theft, loitering, fire, weapons, trespassing and more.
-Deployment details
-Connected
-Site Truck yard
-Network Static IP · Port forwarded
-Recorder NVR · 24 channels
-Camera credentials admin · ••••••••••
-Cam 01
-Streaming
-Cam 02
-Streaming
-Cam 03
-Streaming
-Cam 04
-Streaming
-Cam 05
-Streaming
-Cam 06
-Streaming
-Cam 07
-Streaming
-Cam 08
-Streaming
 Illustrative
 Step 02
 Provide us with your deployment details.
@@ -154,7 +103,7 @@ We hook up to your cameras, configure our AI for your use cases, then test for a
 Book a demo
 Our offer
 We believe in what we have.
-$20,000 If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
+$20,000If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
 Free side by side
 If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts.
 You sign a simple MOU to come on with us when your contract ends if we prove it, and you get a discount for doing it.
@@ -165,7 +114,8 @@ In context
 This is a real product.
 A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.
 Watch intro video
-2 min Book a demo
+2 min
+Book a demo
 Verdun intro video
 Illustrative scenario
 Get in touch
@@ -173,17 +123,10 @@ Catch it while it’s still happening.
 Let’s put Verdun to work.
 Book a demo
 support@verdun.ai
-Verdun intro video
-A two-minute introduction to Verdun, narrated by co-founder and CEO Sonny Tai. Captions are on.
-Open the film directly
 
 ## About Verdun | Founding team
 URL: https://verdun.ai/about
 
-About Verdun | Founding team
-Skip to content
-support@verdun.ai
-Replay opening
 About Verdun
 Founding Team
 2 files · Backed by Y Combinator
@@ -211,10 +154,6 @@ Full bios on verdun.ai
 ## Book a demo | Verdun
 URL: https://verdun.ai/get-started
 
-Book a demo | Verdun
-Skip to content
-support@verdun.ai
-Replay opening
 Get started
 Fill out this form and we’ll take it from there.
 01
@@ -228,7 +167,7 @@ Get started. We hook up to your cameras and monitoring begins.
 Open the form
 support@verdun.ai
 Want to try us first?
-Start us at your next site with a 30 day pilot and nothing to cancel, whether you have monitoring today or not.
+Start us at your next site with a 30-day pilot and nothing to cancel, whether you have monitoring today or not.
 Not ready yet?
 When’s your contract up? Leave the date and we’ll reach out before it.
 We believe in what we have
@@ -237,13 +176,6 @@ If AI or human error causes a miss that leads to damage, we’ll reimburse you u
 ## For integrators and security dealers | Verdun
 URL: https://verdun.ai/integrators
 
-For integrators and security dealers | Verdun
-Skip to content
-support@verdun.ai
-Replay opening
-Your company Monitoring · 24 cameras
-Daily report sent Your logo · 6:00 AM
-+ Monthly recurring revenue Your name on the contract
 For integrators and security dealers
 You install cameras and get paid once.
 Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
@@ -259,12 +191,12 @@ Why you can put your name on it
 We’ll make you look good in front of your client.
 We’re not making a bet with your client’s property, muting alarms and hoping an incident doesn’t happen. Our AI agents clear the noise, so our operators see what matters and can pay real attention to the site.
 Our operators talk down intruders, call the police to your client’s property, communicate with you or your client by text, and send daily reports.
-$20,000 If AI or human error causes a miss that leads to damage, we reimburse up to $20,000. We don’t go around you to your client.
+$20,000If AI or human error causes a miss that leads to damage, we reimburse up to $20,000. We don’t go around you to your client.
 Who does what
 You
 The client relationship, the contract, billing, and deployment details.
 Us
-Connecting the cameras, monitoring, talk downs, police calls, and text messages.
+Connecting the cameras, monitoring, talk-downs, police calls, and text messages.
 We keep you in the loop too. Daily reports go to you as well as your client.
 Already have a monitoring partner? There’s nothing to migrate. Try us at your next site.
 What you get
@@ -286,16 +218,6 @@ We can send you copies of alerts and activity.
 06
 Camera health alerts
 Know when a camera goes down or gets blocked, so you can replace it or let your client know.
-Your company
-Daily report · Riverside Depot
-318 Alarms reviewed
-0:41 Median time to review
-1 Incident
-Alarms by hour
-11:42 PM
-Person tampering with a vehicle Talked down · Police called
-2:15 AM
-Cam 07 view blocked Camera health · Flagged
 Illustrative · A daily report, branded for your company. A copy comes to you too.
 The offer
 Sell us to a client at your next site for 30 days.
@@ -305,10 +227,6 @@ Talk to us about your next site
 ## Common questions | Verdun
 URL: https://verdun.ai/faq
 
-Common questions | Verdun
-Skip to content
-support@verdun.ai
-Replay opening
 Common questions
 How Verdun works.
 What is Verdun?
@@ -320,11 +238,11 @@ Anything real or uncertain is reviewed by a human in under 90 seconds. At a trad
 Can I choose what Verdun looks for?
 Yes. Tell us what you want to monitor for: theft, loitering, fire, weapons, trespassing and more. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.
 What happens when there is a real threat?
-Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
+Anything real or uncertain goes to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
 Are Verdun’s operators available around the clock?
 Our human operators are active 24/7 to review alerts. They aren’t bogged down trying to clear a queue, so they pay real attention to your property.
 What kinds of properties does Verdun monitor?
-One console across commercial, multifamily, and industrial properties.
+Verdun monitors commercial, multifamily, and industrial properties from one console.
 Does Verdun work with my existing cameras?
 Yes. Provide us with your deployment details: network information and camera or device credentials. We hook up to your cameras, configure our AI for your use cases, then test for a few days. We can have you up and running within days.
 Do I get reports?
@@ -332,7 +250,7 @@ Yes. Daily reports show how many alarms we reviewed, how fast we reviewed them, 
 What if Verdun misses something?
 If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
 Can I try Verdun before switching?
-If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30 day pilot and nothing to cancel.
+If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30-day pilot and nothing to cancel.
 Do you work with integrators and security dealers?
 Yes. Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
 Who founded Verdun?

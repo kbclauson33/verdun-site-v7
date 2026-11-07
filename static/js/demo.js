@@ -30,7 +30,7 @@
         <label class="field"><span>Property type</span>
           <select name="property_type"><option value="">Select</option><option>Commercial</option><option>Multifamily</option><option>Industrial</option><option>Other</option></select></label>
         <label class="field"><span>Cameras, roughly</span>
-          <select name="cameras"><option value="">Select</option><option>Under 25</option><option>25 to 100</option><option>100 to 500</option><option>500+</option></select></label>
+          <select name="cameras"><option value="">Select</option><option>Under 25</option><option>25 to 99</option><option>100 to 499</option><option>500+</option></select></label>
         <label class="field field--full"><span>What do you want us to look for?</span>
           <textarea name="look_for" rows="3" maxlength="2000" placeholder="For example: people in the yard after hours, someone trying truck doors, loitering by the garage."></textarea></label>
         <label class="field"><span>Current VMS</span><input name="vms" maxlength="120" placeholder="If you know it"></label>
@@ -66,8 +66,17 @@
 
   const lenis = () => (window.__verdun && window.__verdun.lenis) || window.__lenis;
 
+  function closeMenu() {
+    const m = document.getElementById('menu');
+    if (!m || m.hidden) return null;
+    m.hidden = true;
+    const b = document.querySelector('[data-menu-open]');
+    b && b.setAttribute('aria-expanded', 'false');
+    return b;
+  }
   function open(trigger) {
-    lastFocus = trigger || document.activeElement;
+    const menuBtn = closeMenu();
+    lastFocus = (menuBtn && trigger && trigger.closest('#menu')) ? menuBtn : (trigger || document.activeElement);
     form.hidden = false; done.hidden = true; err.hidden = true;
     openedAt = Date.now();
     if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
@@ -112,7 +121,8 @@
     const body = [
       `Name: ${d.first_name || ''} ${d.last_name || ''}`.trim(), `Email: ${d.email || ''}`, `Company: ${d.company || ''}`,
       d.phone && `Phone: ${d.phone}`, d.property_type && `Property: ${d.property_type}`, d.cameras && `Cameras: ${d.cameras}`,
-      d.look_for && `Looking for: ${d.look_for}`, d.vms && `VMS: ${d.vms}`, d.contract_end && `Contract up: ${d.contract_end}`,
+      d.look_for && `Looking for: ${d.look_for}`, d.vms && `VMS: ${d.vms}`,
+      d.monitoring && `Monitoring today: ${d.monitoring === 'has' ? 'Yes' : 'Not yet'}`, d.contract_end && `Contract up: ${d.contract_end}`,
     ].filter(Boolean).join('\n');
     return `mailto:support@verdun.ai?subject=${encodeURIComponent('Demo request: ' + (d.company || ''))}&body=${encodeURIComponent(body)}`;
   }
@@ -121,11 +131,18 @@
     e.preventDefault();
     err.hidden = true;
     $$('.field.is-bad', form).forEach((f) => f.classList.remove('is-bad'));
-    const bad = $$('[required]', form).filter((i) => !i.value.trim() || (i.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value.trim())));
+    $$('[aria-invalid]', form).forEach((i) => i.removeAttribute('aria-invalid'));
+    const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const bad = $$('[required]', form).filter((i) => !i.value.trim() || (i.type === 'email' && !emailOk(i.value.trim())));
     if (bad.length) {
-      bad.forEach((i) => i.closest('.field').classList.add('is-bad'));
-      err.textContent = 'Please fill in your first name, a valid work email, and your company.';
-      err.hidden = false; bad[0].focus(); return;
+      bad.forEach((i) => { i.closest('.field').classList.add('is-bad'); i.setAttribute('aria-invalid', 'true'); i.setAttribute('aria-describedby', 'demo-error'); });
+      const onlyEmail = bad.length === 1 && bad[0].type === 'email' && bad[0].value.trim();
+      err.id = 'demo-error';
+      err.textContent = onlyEmail ? 'That email doesn’t look right. Try name@company.com.' : 'Please fill in your first name, a valid work email, and your company.';
+      err.hidden = false;
+      bad[0].focus();
+      bad[0].scrollIntoView({ block: 'center', behavior: REDUCE ? 'auto' : 'smooth' });
+      return;
     }
     const d = payload();
     submit.disabled = true; submit.classList.add('is-busy');
@@ -138,6 +155,7 @@
     } catch (x) {
       err.innerHTML = `We couldn’t send this just now. <a href="${mailtoFallback(d)}">Email it to us instead</a> and it goes straight to the team.`;
       err.hidden = false;
+      err.scrollIntoView({ block: 'nearest', behavior: REDUCE ? 'auto' : 'smooth' });
     } finally {
       submit.disabled = false; submit.classList.remove('is-busy');
     }

@@ -22,7 +22,7 @@ const BOX = {
 const DEMOS = [
   { where: 'TRUCK CAB / DEMO 02', title: 'Possible vehicle break-in', tag: 'AI: Dispatch', tone: 'red', text: 'Person repeatedly trying the cab door. Immediate operator review.', pt: [0.572, 0.762] },
   { where: 'LOADING AREA / DEMO 01', title: 'Maintenance', tag: 'AI: Non-threatening', tone: 'blue', text: 'Forklift operator carrying out routine yard maintenance. No threat identified.', pt: [0.503, 0.548] },
-  { where: 'RIGHT GARAGE / DEMO 03', title: 'Loitering by garage', tag: 'AI: Voice down', tone: 'amber', text: 'Person lingering near the garage door. Operator voice-down requested.', pt: [0.629, 0.342] },
+  { where: 'RIGHT GARAGE / DEMO 03', title: 'Loitering by garage', tag: 'AI: Voice-down', tone: 'amber', text: 'Person lingering near the garage door. Operator voice-down requested.', pt: [0.629, 0.342] },
 ];
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const timeout = (ms) => new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms));
@@ -330,11 +330,13 @@ function buildIntro() {
   tl.to(heroSplit.lines, { yPercent: 0, duration: 1.15, stagger: 0.09, ease: 'vOut' }, 6.35);
   tl.fromTo('.hero__content [data-hero-in]', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1, stagger: 0.08, ease: 'vOut', immediateRender: false }, 6.45);
   tl.to(pinsWrap, { opacity: 1, duration: 0.8, ease: 'power2.out', onStart: () => { pinsWrap._live = true; cycleDemos(); } }, 6.7);
-  tl.call(() => { html.classList.remove('is-intro'); }, null, 6.75);
+  tl.call(() => { html.classList.remove('is-intro'); setHeaderInert(false); }, null, 6.75);
   return tl;
 }
 
+function setHeaderInert(on) { const h = document.querySelector('[data-header]'); if (h) h.inert = on; }
 function introDone() {
+  setHeaderInert(false);
   html.classList.remove('is-intro', 'intro-pending');
   lenis.start();
   startIdle();
@@ -343,6 +345,7 @@ function introDone() {
 }
 
 function finalizeNow() {
+  setHeaderInert(false);
   // No opening: reduced motion, ?skip, or the photo failed to load.
   const K = keys();
   Object.assign(cam, { x: K.w[0], y: K.w[1], z: K.w[2] });
@@ -371,6 +374,7 @@ document.addEventListener('keydown', (e) => {
 
 function playIntro() {
   html.classList.add('is-intro');
+  setHeaderInert(true);
   html.classList.remove('intro-pending');
   lenis.stop();
   window.scrollTo(0, 0);
@@ -493,6 +497,7 @@ function initQueue() {
   const feed = $('[data-vd-feed]', root);
   const brand = $('[data-vd-brand]', root);
   const stageEl = $('[data-qstage]', root);
+  const live = $('[data-qlive]', root);
   const SRC = { garage: 'static/media/garage.webp', warehouse: 'static/media/warehouse.webp', yard: 'static/media/yard.webp' };
   const R = gsap.utils.random;
   const small = () => window.innerWidth <= 900;
@@ -569,10 +574,10 @@ function initQueue() {
     if (animate) gsap.from(li, { opacity: 0, y: -12, duration: 0.6, ease: 'vOut' });
     const done = () => { $('.vdf__st', li).textContent = a.out; li.classList.add(a.cls); };
     if (animate) gsap.delayedCall(0.9, done); else done();
-    const max = small() ? 3 : 5;
+    const max = window.innerWidth <= 600 ? 3 : 5;
     while (feed.children.length > max) feed.lastElementChild.remove();
   }
-  for (let i = 0; i < 4; i++) addFeed(false);
+  for (let i = 0; i < 5; i++) addFeed(false);
 
   // Legacy → Verdun: the clutter floats away and the Verdun console settles in.
   gsap.set(vd, { autoAlpha: 0 });
@@ -584,11 +589,16 @@ function initQueue() {
     const dx = sr.left + sr.width / 2 - (br.left + br.width / 2);
     const dy = sr.top + sr.height / 2 - (br.top + br.height / 2);
     const tl = gsap.timeline({ paused: true, onReverseComplete: () => { gsap.set(calmBits, { clearProps: 'x,y,rotation,scale,opacity' }); calm && calm.kill(); calm = null; } });
-    tl.to(calmBits, { x: () => R(-280, 280), y: () => R(-240, 90), rotation: () => R(-30, 30), scale: () => R(0.55, 0.9), opacity: 0, duration: 0.95, ease: 'power2.in', stagger: { each: 0.01, from: 'random' } }, 0)
-      .to(lg, { autoAlpha: 0, duration: 0.35 }, 0.85)
-      .set(vd, { autoAlpha: 1 }, 0.5)
-      .fromTo(brand, { x: dx, y: dy, scale: 2.6, opacity: 0, filter: 'blur(10px)' }, { x: 0, y: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'expo.out' }, 0.55)
-      .fromTo(['.vd__stat', '.vd__site', '.vd__colhead', '.vdf'].map((s) => $$(s, vd)).flat(), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.06, ease: 'vOut' }, 1.0);
+    const calmIn = ['.vd__stat', '.vd__site', '.vd__colhead', '.vdf'].map((s) => $$(s, vd)).flat();
+    tl.set(vd, { autoAlpha: 1 }, 0)
+      .set(calmIn, { opacity: 0 }, 0)
+      .set(brand, { opacity: 0 }, 0)
+      .to(lg, { backgroundColor: 'rgba(13, 15, 18, 0)', duration: 0.55, ease: 'power1.inOut' }, 0.15)
+      .to(calmBits, { x: () => R(-280, 280), y: () => R(-240, 90), rotation: () => R(-30, 30), scale: () => R(0.55, 0.9), duration: 1.0, ease: 'power2.in', stagger: { each: 0.01, from: 'random' } }, 0)
+      .to(calmBits, { opacity: 0, duration: 0.6, ease: 'power1.in', stagger: { each: 0.01, from: 'random' } }, 0.3)
+      .fromTo(brand, { x: dx, y: dy, scale: 2.6, opacity: 0, filter: 'blur(10px)' }, { x: 0, y: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'expo.out' }, 0.35)
+      .fromTo(calmIn, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.06, ease: 'vOut' }, 0.6)
+      .set(lg, { autoAlpha: 0 }, 1.35);
     return tl;
   }
   function toCalm() {
@@ -609,7 +619,8 @@ function initQueue() {
     const prev = step;
     step = i;
     root.dataset.step = String(i);
-    $$('[data-qgo]').forEach((b, j) => b.setAttribute('aria-selected', String(j === i)));
+    $$('[data-qgo]').forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
+    if (prev >= 0 && live) live.textContent = $('h3', $$('.qstep', root)[i]).textContent;
     $$('.qstep', root).forEach((s, j) => s.classList.toggle('is-active', j === i));
     if (i >= 1 && prev < 1) { if (calm) calm.timeScale(1); toCalm(); }
     if (i === 0 && prev >= 1) toLegacy();
@@ -656,7 +667,7 @@ function initProc() {
   const last = chaps.length - 1;
 
   const mm = gsap.matchMedia();
-  mm.add('(min-width: 1001px) and (min-height: 641px)', () => {
+  mm.add('(min-width: 1001px) and (min-height: 641px) and (prefers-reduced-motion: no-preference)', () => {
     let lastIdx = -1;
     const st = ScrollTrigger.create({
       trigger: proc, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true,
@@ -681,13 +692,21 @@ function initProc() {
       const idx = Math.round(p * last);
       if (idx !== lastIdx) {
         lastIdx = idx;
-        dots.forEach((b, i) => b.classList.toggle('is-on', i === idx));
+        dots.forEach((b, i) => { b.classList.toggle('is-on', i === idx); if (i === idx) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
       }
     }
     dots.forEach((b, i) => { b.onclick = () => scrollToTarget(st.start + (st.end - st.start) * (i / last) + 2); });
-    return () => { gsap.set(track, { clearProps: 'transform' }); $$('[data-depth]', track).forEach((e) => gsap.set(e, { clearProps: 'transform' })); };
+    const sticky = $('.proc__sticky', proc);
+    const onFocus = (e) => {
+      const c = e.target.closest('.chap');
+      sticky.scrollLeft = 0;
+      if (c) lenis.scrollTo(st.start + (st.end - st.start) * (chaps.indexOf(c) / last) + 2, { immediate: true, force: true });
+    };
+    track.addEventListener('focusin', onFocus);
+    return () => {
+      track.removeEventListener('focusin', onFocus); gsap.set(track, { clearProps: 'transform' }); $$('[data-depth]', track).forEach((e) => gsap.set(e, { clearProps: 'transform' })); };
   });
-  mm.add('(max-width: 1000px), (max-height: 640px)', () => {
+  mm.add('(max-width: 1000px), (max-height: 640px), (prefers-reduced-motion: reduce)', () => {
     if (REDUCE) return;
     const tweens = $$('.chap__media', track).map((m) => gsap.fromTo(m, { y: 60, rotation: -2 }, { y: 0, rotation: 0, ease: 'none', scrollTrigger: { trigger: m, start: 'top bottom', end: 'top 40%', scrub: 0.5 } }));
     return () => tweens.forEach((t) => { t.scrollTrigger && t.scrollTrigger.kill(); t.kill(); });
@@ -868,6 +887,7 @@ async function boot() {
   initIncluded();
   initRequest();
   initFooter();
+  ScrollTrigger.create({ trigger: '.problem', start: 'top 72px', end: 'bottom 72px', toggleClass: { targets: '[data-header]', className: 'is-on-blue' } });
   initToggles();
   if (skip || !img) finalizeNow();
   else playIntro();

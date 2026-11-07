@@ -104,10 +104,10 @@ File: `index.html`
 - Log only
 - Sees a truck backing in. Checks the scheduled overnight delivery.
 - Person cutting under a truck
-- Escalate · Voice down
+- Escalate · Voice-down
 - Checks that the yard is closed. Pulls live view and hands it to a human operator.
 - The result
-- Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.
+- Human operators talk down the threat, call the police, and notify other relevant parties by call, text, or email.
 - <90 s
 - Anything real or uncertain is reviewed by a human in under 90 seconds.
 - Book a demo
@@ -188,7 +188,7 @@ File: `index.html`
 - We hook up to your cameras, configure our AI for your use cases, then test for a few days.
 - Book a demo
 - (alt) Verdun console showing a camera’s protocol: which incidents go to a human, which get a voice-down, and which are dismissed
-- (alt) Verdun alarm queue, live, with agent verdicts across sites
+- (alt) Verdun alarm queue with agent verdicts across sites
 
 ### Incentive
 - Our offer
@@ -236,7 +236,7 @@ File: `get-started.html`
 - Open the form
 - support@verdun.ai
 - Want to try us first?
-- Start us at your next site with a 30 day pilot and nothing to cancel, whether you have monitoring today or not.
+- Start us at your next site with a 30-day pilot and nothing to cancel, whether you have monitoring today or not.
 - Not ready yet?
 - When’s your contract up? Leave the date and we’ll reach out before it.
 - We believe in what we have
@@ -273,7 +273,7 @@ File: `integrators.html`
 - You
 - The client relationship, the contract, billing, and deployment details.
 - Us
-- Connecting the cameras, monitoring, talk downs, police calls, and text messages.
+- Connecting the cameras, monitoring, talk-downs, police calls, and text messages.
 - We keep you in the loop too. Daily reports go to you as well as your client.
 - Already have a monitoring partner? There’s nothing to migrate. Try us at your next site.
 - What you get
@@ -360,11 +360,11 @@ File: `faq.html`
 - Can I choose what Verdun looks for?
 - Yes. Tell us what you want to monitor for: theft, loitering, fire, weapons, trespassing and more. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.
 - What happens when there is a real threat?
-- Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
+- Anything real or uncertain goes to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.
 - Are Verdun’s operators available around the clock?
 - Our human operators are active 24/7 to review alerts. They aren’t bogged down trying to clear a queue, so they pay real attention to your property.
 - What kinds of properties does Verdun monitor?
-- One console across commercial, multifamily, and industrial properties.
+- Verdun monitors commercial, multifamily, and industrial properties from one console.
 - Does Verdun work with my existing cameras?
 - Yes. Provide us with your deployment details: network information and camera or device credentials. We hook up to your cameras, configure our AI for your use cases, then test for a few days. We can have you up and running within days.
 - Do I get reports?
@@ -372,7 +372,7 @@ File: `faq.html`
 - What if Verdun misses something?
 - If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.
 - Can I try Verdun before switching?
-- If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30 day pilot and nothing to cancel.
+- If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30-day pilot and nothing to cancel.
 - Do you work with integrators and security dealers?
 - Yes. Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.
 - Who founded Verdun?

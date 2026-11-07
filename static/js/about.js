@@ -62,7 +62,18 @@
   function close() { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); lenis.start(); btn.focus({ preventScroll: true }); }
   btn.addEventListener('click', open);
   $('[data-menu-close]').addEventListener('click', close);
-  menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  // While open: Escape closes from anywhere, and Tab stays inside the menu.
+  document.addEventListener('keydown', (e) => {
+    if (menu.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    const f = $$('a, button', menu).filter((x) => x.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (!menu.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   $$('.menu__list a', menu).forEach((a) => a.addEventListener('click', () => { menu.hidden = true; lenis.start(); }));
 
   // Toggles (Common questions)

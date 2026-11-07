@@ -10,11 +10,12 @@ All visible copy comes from the site's approved copy (verdun.ai + Ethan's doc).
 Run from the repo root:  python3 tools/seo.py
 """
 import html, json, re, sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
 BASE = 'https://verdun.ai'
-TODAY = '2026-11-06'
+TODAY = __import__('datetime').date.today().isoformat()
 ORG_ID = f'{BASE}/#org'
 SONNY_ID = f'{BASE}/about#sonny-tai'
 TUNG_ID = f'{BASE}/about#tung-hoang'
@@ -33,7 +34,7 @@ WEBSITE = {'@type': 'WebSite', '@id': f'{BASE}/#website', 'url': f'{BASE}/', 'na
 SERVICE = {
     '@type': 'Service', '@id': f'{BASE}/#monitoring', 'name': 'Verdun remote video monitoring',
     'serviceType': 'Remote video monitoring', 'provider': {'@id': ORG_ID},
-    'description': 'AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain. Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.',
+    'description': 'AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain. Human operators talk down the threat, call the police, and notify other relevant parties by call, text, or email.',
     'audience': {'@type': 'BusinessAudience', 'name': 'Commercial, multifamily, and industrial properties'},
 }
 SONNY = {
@@ -60,11 +61,11 @@ FAQ = [
     ('Can I choose what Verdun looks for?',
      'Yes. Tell us what you want to monitor for: theft, loitering, fire, weapons, trespassing and more. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.'),
     ('What happens when there is a real threat?',
-     'Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.'),
+     'Anything real or uncertain goes to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.'),
     ('Are Verdun’s operators available around the clock?',
      'Our human operators are active 24/7 to review alerts. They aren’t bogged down trying to clear a queue, so they pay real attention to your property.'),
     ('What kinds of properties does Verdun monitor?',
-     'One console across commercial, multifamily, and industrial properties.'),
+     'Verdun monitors commercial, multifamily, and industrial properties from one console.'),
     ('Does Verdun work with my existing cameras?',
      'Yes. Provide us with your deployment details: network information and camera or device credentials. We hook up to your cameras, configure our AI for your use cases, then test for a few days. We can have you up and running within days.'),
     ('Do I get reports?',
@@ -72,7 +73,7 @@ FAQ = [
     ('What if Verdun misses something?',
      'If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.'),
     ('Can I try Verdun before switching?',
-     'If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30 day pilot and nothing to cancel.'),
+     'If you have monitoring today and your deployment supports it, we’ll monitor side by side with your current provider for free. We agree up front on what counts. You can also start us at your next site with a 30-day pilot and nothing to cancel.'),
     ('Do you work with integrators and security dealers?',
      'Yes. Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.'),
     ('Who founded Verdun?',
@@ -207,15 +208,50 @@ def footer_links():
         p.write_text(h)
 
 
+class _Visible(HTMLParser):
+    """Collect the text a reader sees: skips scripts, icons, dialogs, the header, menu and footer,
+    and anything marked aria-hidden (decorative mock-ups, tags, the skip-intro control)."""
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
+    BREAK = {'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'dt', 'dd', 'summary', 'figcaption', 'blockquote', 'span', 'title', 'a', 'button'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.skip, self.out = 0, []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.VOID:
+            if tag == 'br' and not self.skip:
+                self.out.append(' ')
+            return
+        if self.skip:
+            self.skip += 1
+            return
+        a = dict(attrs)
+        cls = (a.get('class') or '').split()
+        if (tag in ('head', 'script', 'style', 'svg', 'dialog', 'footer', 'template') or a.get('aria-hidden') == 'true'
+                or (tag == 'header' and 'site-header' in cls) or (tag == 'div' and cls[:1] == ['menu'])
+                or 'skip-intro' in cls or 'skip-link' in cls):
+            self.skip = 1
+
+    def handle_endtag(self, tag):
+        if tag in self.VOID:
+            return
+        if self.skip:
+            self.skip -= 1
+            return
+        if tag in self.BREAK:
+            self.out.append('\n')
+
+    def handle_data(self, d):
+        if not self.skip:
+            self.out.append(d)
+
+
 def visible_text(path):
-    h = path.read_text()
-    h = re.sub(r'<(script|style|svg)\b.*?</\1>', ' ', h, flags=re.S)
-    h = re.sub(r'<header class="site-header".*?</header>|<div class="menu".*?</ol>|<footer.*?</footer>|<div class="intro-ui".*?<button class="skip-intro"', ' ', h, flags=re.S)
-    h = re.sub(r'<br\s*/?>', ' ', h)
-    h = re.sub(r'</(p|h\d|li|dt|dd|summary|figcaption|blockquote|span)>', '\n', h)
-    t = html.unescape(re.sub(r'<[^>]+>', ' ', h))
+    v = _Visible()
+    v.feed(path.read_text())
     out = []
-    for line in (re.sub(r'\s+', ' ', l).strip() for l in t.split('\n')):
+    for line in (re.sub(r'\s+', ' ', l).strip() for l in ''.join(v.out).split('\n')):
         if line and (not out or out[-1] != line):
             out.append(line)
     return '\n'.join(out)
@@ -263,12 +299,12 @@ Sitemap: {BASE}/sitemap.xml
 
 > Verdun is a remote video monitoring service, backed by Y Combinator. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down, dispatch, and notification. "We built the world’s most advanced monitoring center."
 
-Verdun (Enari Inc., dba Verdun) monitors commercial, multifamily, and industrial properties. Customers tell Verdun what to look for. AI agents watch every camera, dismiss the noise, log what’s routine, and escalate what’s real to human operators, who talk down intruders through on-site speakers, dispatch police or guards, and notify the customer.
+Verdun (Enari Inc., dba Verdun) monitors commercial, multifamily, and industrial properties. Customers tell Verdun what to look for. AI agents watch every camera, dismiss the noise, log what’s routine, and escalate what’s real or uncertain to human operators, who talk down intruders through on-site speakers, dispatch police or guards, and notify the customer.
 
 ## Pages
 
 - [Home]({BASE}/): how Verdun’s AI agents and human operators replace the traditional monitoring queue
-- [Book a demo]({BASE}/get-started): how to get started, in four steps, and the 30 day pilot
+- [Book a demo]({BASE}/get-started): how to get started, in four steps, and the 30-day pilot
 - [For integrators and security dealers]({BASE}/integrators): add monthly recurring revenue to every camera you install, with your name on the contract
 - [Common questions]({BASE}/faq): plain answers about how Verdun works
 - [About]({BASE}/about): founding team, Sonny Tai (CEO) and Tung Hoang (CTO)

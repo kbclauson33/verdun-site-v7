@@ -23,7 +23,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18541176135"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","AW-18541176135");</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://verdun.ai/#org", "name": "Verdun", "legalName": "Enari Inc.", "alternateName": "Enari Inc. (dba Verdun)", "url": "https://verdun.ai/", "logo": "https://verdun.ai/icon-512.png", "image": "https://verdun.ai/og-image.jpg", "email": "support@verdun.ai", "description": "A remote video monitoring service. AI agents review every alarm. Trained operators respond to real threats.", "slogan": "We built the world’s most advanced monitoring center.", "founder": [{"@id": "https://verdun.ai/about#sonny-tai"}, {"@id": "https://verdun.ai/about#tung-hoang"}], "sameAs": ["https://www.linkedin.com/company/verdunai", "https://www.ycombinator.com/companies/verdun", "https://x.com/VerdunAI"], "knowsAbout": ["Remote video monitoring", "AI video analytics", "Alarm verification", "Live talk-down", "Security dispatch"]}, {"@type": "WebSite", "@id": "https://verdun.ai/#website", "url": "https://verdun.ai/", "name": "Verdun", "publisher": {"@id": "https://verdun.ai/#org"}}, {"@type": "Service", "@id": "https://verdun.ai/#monitoring", "name": "Verdun remote video monitoring", "serviceType": "Remote video monitoring", "provider": {"@id": "https://verdun.ai/#org"}, "description": "AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain. Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.", "audience": {"@type": "BusinessAudience", "name": "Commercial, multifamily, and industrial properties"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://verdun.ai/#org", "name": "Verdun", "legalName": "Enari Inc.", "alternateName": "Enari Inc. (dba Verdun)", "url": "https://verdun.ai/", "logo": "https://verdun.ai/icon-512.png", "image": "https://verdun.ai/og-image.jpg", "email": "support@verdun.ai", "description": "A remote video monitoring service. AI agents review every alarm. Trained operators respond to real threats.", "slogan": "We built the world’s most advanced monitoring center.", "founder": [{"@id": "https://verdun.ai/about#sonny-tai"}, {"@id": "https://verdun.ai/about#tung-hoang"}], "sameAs": ["https://www.linkedin.com/company/verdunai", "https://www.ycombinator.com/companies/verdun", "https://x.com/VerdunAI"], "knowsAbout": ["Remote video monitoring", "AI video analytics", "Alarm verification", "Live talk-down", "Security dispatch"]}, {"@type": "WebSite", "@id": "https://verdun.ai/#website", "url": "https://verdun.ai/", "name": "Verdun", "publisher": {"@id": "https://verdun.ai/#org"}}, {"@type": "Service", "@id": "https://verdun.ai/#monitoring", "name": "Verdun remote video monitoring", "serviceType": "Remote video monitoring", "provider": {"@id": "https://verdun.ai/#org"}, "description": "AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain. Human operators talk down the threat, call the police, and notify other relevant parties by call, text, or email.", "audience": {"@type": "BusinessAudience", "name": "Commercial, multifamily, and industrial properties"}}]}</script>
 <!-- seo:end -->
 <meta name="theme-color" content="#080b10">
 <link rel="icon" href="static/media/favicon.svg" type="image/svg+xml">
@@ -46,7 +46,7 @@
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#problem">Skip to content</a>
 
 <!-- Shared SVG defs: textured wordmark filter + stripe patterns + icons -->
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -115,9 +115,11 @@
     <ol class="menu__list">
       <li><a href="/integrators"><span class="menu__n">01</span><span class="menu__t">For integrators and security dealers</span></a></li>
       <li><a href="/get-started" data-demo><span class="menu__n">02</span><span class="menu__t">Book a demo</span></a></li>
-      <li><a href="/about"><span class="menu__n">03</span><span class="menu__t">About</span></a></li>
-      <li><a href="https://verdun.ai/essays"><span class="menu__n">04</span><span class="menu__t">Essays</span></a></li>
-      <li><a href="https://verdun.ai/careers"><span class="menu__n">05</span><span class="menu__t">Careers</span></a></li>
+      <li><a href="#how-it-works"><span class="menu__n">03</span><span class="menu__t">How it works</span></a></li>
+      <li><a href="/about"><span class="menu__n">04</span><span class="menu__t">About</span></a></li>
+      <li><a href="/faq"><span class="menu__n">05</span><span class="menu__t">Common questions</span></a></li>
+      <li><a href="https://verdun.ai/essays"><span class="menu__n">06</span><span class="menu__t">Essays</span></a></li>
+      <li><a href="https://verdun.ai/careers"><span class="menu__n">07</span><span class="menu__t">Careers</span></a></li>
     </ol>
     <div class="menu__foot">
       <a href="mailto:support@verdun.ai">support@verdun.ai</a>
@@ -271,13 +273,14 @@
         <span class="queue__note">Illustrative</span>
       </div>
 
-      <div class="queue__narr" aria-live="polite">
-        <div class="qsteps-nav" role="tablist" aria-label="Traditional monitoring and Verdun">
-          <button type="button" role="tab" data-qgo="0"><span>01</span>Traditional</button>
-          <button type="button" role="tab" data-qgo="1"><span>02</span>Our solution</button>
-          <button type="button" role="tab" data-qgo="2"><span>03</span>The result</button>
+      <div class="queue__narr">
+        <div class="qsteps-nav" role="group" aria-label="Traditional monitoring and Verdun">
+          <button type="button" data-qgo="0"><span>01</span>Traditional</button>
+          <button type="button" data-qgo="1"><span>02</span>Our solution</button>
+          <button type="button" data-qgo="2"><span>03</span>The result</button>
         </div>
       </div>
+      <p class="sr-only" aria-live="polite" data-qlive></p>
     </div>
 
     <div class="qsteps">
@@ -286,7 +289,7 @@
         <h3>When activity spikes, the queue backs up and a real threat waits its turn.</h3>
         <p class="stat"><b class="is-red">20+&nbsp;min</b><span>#20 in line. The threat is still waiting<br>for an operator to open it.</span></p>
         <details class="more more--ink" data-more>
-          <summary><span>How it works</span><i aria-hidden="true"></i></summary>
+          <summary aria-label="How traditional monitoring works"><span>How it works</span><i aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__inner">
             <p>During busy periods, routine clips pile up faster than operators can clear them. A real threat waits its turn behind all of them, and it often takes 20+ minutes before an operator even opens it.</p>
             <dl class="facts">
@@ -301,26 +304,26 @@
         <span class="label label--ink">Our solution</span>
         <h3 class="qstep__title">The world’s most advanced monitoring center.</h3>
         <p>AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain.</p>
-        <p class="stat"><b class="is-ink"><span aria-hidden="true">0Q</span><span class="sr-only">Zero in queue</span></b><span>Humans get to focus on real incidents, not clearing false alarms.</span></p>
+        <p class="stat"><b class="is-ink"><span class="stat__q" aria-hidden="true">0Q</span><span class="sr-only">Zero in queue</span></b><span>Humans get to focus on real incidents, not clearing false alarms.</span></p>
         <details class="more more--ink" data-more>
-          <summary><span>How it works</span><i aria-hidden="true"></i></summary>
+          <summary aria-label="How Verdun works"><span>How it works</span><i aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__inner">
             <p>Verdun deploys AI agents that identify suspicious behavior, weigh the context, and reason about what they see. Only then do they pull up a live view and escalate to one of our human operators.</p>
             <dl class="facts">
               <div><dt>Glare on a store door</dt><dd><b>Dismiss</b>Sees moving glare. Checks that the store is closed and no one is inside.</dd></div>
               <div><dt>Truck at the loading dock</dt><dd><b>Log only</b>Sees a truck backing in. Checks the scheduled overnight delivery.</dd></div>
-              <div class="is-alert"><dt>Person cutting under a truck</dt><dd><b>Escalate · Voice down</b>Checks that the yard is closed. Pulls live view and hands it to a human operator.</dd></div>
+              <div class="is-alert"><dt>Person cutting under a truck</dt><dd><b>Escalate · Voice-down</b>Checks that the yard is closed. Pulls live view and hands it to a human operator.</dd></div>
             </dl>
           </div></div>
         </details>
       </article>
       <article class="qstep" data-qstep="2">
         <span class="label label--ink">The result</span>
-        <h3>Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.</h3>
+        <h3>Human operators talk down the threat, call the police, and notify other relevant parties by call, text, or email.</h3>
         <p class="stat"><b class="is-ink">&lt;90&nbsp;s</b><span>Anything real or uncertain is reviewed by a human in under 90 seconds.</span></p>
         <a class="btn btn--ink" href="/get-started" data-magnetic data-demo><span>Book a demo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <details class="more more--ink" data-more>
-          <summary><span>How it works</span><i aria-hidden="true"></i></summary>
+          <summary aria-label="How the response works"><span>How it works</span><i aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__inner">
             <p>Because agents clear routine activity before it reaches a person, our operators only see what matters. Anything real or uncertain reaches a human in under 90 seconds.</p>
             <dl class="facts">
@@ -403,7 +406,7 @@
 
         <article class="chap" data-chapter="2">
           <div class="chap__media" data-depth="1.0">
-            <img width="1600" height="900" src="static/media/product-queue.webp" alt="Verdun alarm queue, live, with agent verdicts across sites" loading="lazy">
+            <img width="1600" height="900" src="static/media/product-queue.webp" alt="Verdun alarm queue with agent verdicts across sites" loading="lazy">
             <span class="media-tag media-tag--bl">Real product · Customer names changed</span>
           </div>
           <div class="chap__text" data-depth="0.7">

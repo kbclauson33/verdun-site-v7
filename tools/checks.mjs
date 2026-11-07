@@ -14,13 +14,13 @@ for (const m of (html + subs).matchAll(/(?:src|href|poster)="([^"#:]+?\.(?:webp|
 for (const m of js.matchAll(/'(static\/media\/[^']+)'/g)) refs.add(m[1]);
 for (const m of css.matchAll(/url\('\.\.\/([^']+)'\)/g)) refs.add('static/' + m[1]);
 for (const r of refs) ok(fs.existsSync(path.join(root, r)), `asset exists: ${r}`);
-for (const f of ['static/js/main.js', 'static/js/barfilm.js', 'static/js/demo.js', 'static/js/about.js', 'api/demo.js']) { try { execSync(`node --check "${path.join(root, f)}"`); ok(true, `syntax: ${f}`); } catch { ok(false, `syntax: ${f}`); } }
+for (const f of ['static/js/main.js', 'static/js/barfilm.js', 'static/js/demo.js', 'static/js/about.js', 'static/js/integrators.js', 'api/demo.js']) { try { execSync(`node --check "${path.join(root, f)}"`); ok(true, `syntax: ${f}`); } catch { ok(false, `syntax: ${f}`); } }
 const ext = [...html.matchAll(/<script[^>]+src="(https?:[^"]+)"/g)].map((m) => m[1]);
 ok(ext.every((u) => u.startsWith('https://www.googletagmanager.com/gtag/js?id=AW-18541176135')), 'only external script is the Google Ads tag (vendor libraries are local)');
 ok(/Added people and classifications simulated/.test(html), 'hero photo disclosure present');
 ok(/Real product · Customer names changed/.test(html), 'product-frame disclosure present');
 ok(!/autoplay/.test(html.replace(/--autoplay[^"]*/g, '')), 'no autoplaying media with sound');
-ok(/<video[^>]+data-field[^>]+muted/.test(html), 'field footage is muted');
+ok([...html.matchAll(/<video[^>]*>/g)].every((m) => /controls|muted/.test(m[0])), 'background videos are muted (the intro film has player controls)');
 ok(/prefers-reduced-motion/.test(html), 'reduced motion skips the opening');
 ok(/data-skip/.test(html) && /data-replay/.test(html), 'skip and replay controls present');
 const imgs = fs.readdirSync(path.join(root, 'static/media'));

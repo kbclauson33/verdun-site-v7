@@ -33,7 +33,7 @@ WEBSITE = {'@type': 'WebSite', '@id': f'{BASE}/#website', 'url': f'{BASE}/', 'na
 SERVICE = {
     '@type': 'Service', '@id': f'{BASE}/#monitoring', 'name': 'Verdun remote video monitoring',
     'serviceType': 'Remote video monitoring', 'provider': {'@id': ORG_ID},
-    'description': 'Tell us what you want to look for. Our AI looks for it and our human operators act on it. AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.',
+    'description': 'AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain. Human operators talk down the threat, call the police, and notify other relevant parties by call, text or email.',
     'audience': {'@type': 'BusinessAudience', 'name': 'Commercial, multifamily, and industrial properties'},
 }
 SONNY = {
@@ -54,11 +54,11 @@ FAQ = [
     ('What is Verdun?',
      'Verdun is a remote video monitoring service, backed by Y Combinator. AI agents review every alarm. Trained operators respond to real threats. We built the world’s most advanced monitoring center.'),
     ('How is Verdun different from traditional video monitoring?',
-     'At a traditional center, every detection becomes a clip for a human to review. When activity spikes, the queue backs up and a real threat waits its turn. At Verdun, AI agents review every alarm first. They dismiss the noise, log what’s routine, and escalate what’s real.'),
+     'Traditional monitoring centers are flooded with more alarms than people can get through. When activity spikes, the queue backs up and a real threat waits its turn. At Verdun, AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain.'),
     ('How fast does an operator see a real threat?',
-     'Every alarm is reviewed in under 90 seconds. At a traditional center during peak hours, a real threat can wait 20+ minutes before an operator even opens it.'),
+     'Anything real or uncertain is reviewed by a human in under 90 seconds. At a traditional center during peak hours, a real threat can wait 20+ minutes before an operator even opens it.'),
     ('Can I choose what Verdun looks for?',
-     'Yes. Tell us what you want to look for. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.'),
+     'Yes. Tell us what you want to monitor for: theft, loitering, fire, weapons, trespassing and more. Our AI looks for it and our human operators act on it. Arming schedules and response rules reflect how each property operates.'),
     ('What happens when there is a real threat?',
      'Verified threats go to our operators, trained on your site’s protocol, for talk-down, dispatch, and notification. The operator gets the clip, a live view, the agent’s assessment, and your protocol on one screen. They talk down intruders through on-site speakers, dispatch police or guards, and send your team an update the agent has already drafted.'),
     ('Are Verdun’s operators available around the clock?',
@@ -66,7 +66,9 @@ FAQ = [
     ('What kinds of properties does Verdun monitor?',
      'One console across commercial, multifamily, and industrial properties.'),
     ('Does Verdun work with my existing cameras?',
-     'Give us your deployment details: your current VMS and your cameras. We hook up to your cameras and monitoring begins.'),
+     'Yes. Provide us with your deployment details: network information and camera or device credentials. We hook up to your cameras, configure our AI for your use cases, then test for a few days. We can have you up and running within days.'),
+    ('Do I get reports?',
+     'Yes. Daily reports show how many alarms we reviewed, how fast we reviewed them, and any incidents at your property.'),
     ('What if Verdun misses something?',
      'If AI or human error causes a miss that leads to damage, we’ll reimburse you up to $20,000.'),
     ('Can I try Verdun before switching?',
@@ -79,7 +81,7 @@ FAQ = [
 
 PAGES = {
     'index.html': dict(path='/', title='Verdun | AI video monitoring with human operators',
-        desc='A remote video monitoring service. AI agents review every alarm on your cameras, and trained operators respond to real threats with talk-down and dispatch.',
+        desc='Most monitoring tells you what already happened. Verdun’s AI agents review every alarm and human operators respond to real threats while they’re still happening.',
         graph=[ORG, WEBSITE, SERVICE]),
     'about.html': dict(path='/about', title='About Verdun | Founding team',
         desc='Verdun’s founding team: Sonny Tai, Co-Founder and CEO, a former US Marine officer and founder of Actuate, and Tung Hoang, Co-Founder and CTO.',
@@ -88,7 +90,7 @@ PAGES = {
         desc='Tell us about your site, what you want to look for, and your deployment details. We hook up to your cameras and monitoring begins.',
         graph=[{'@type': 'ContactPage', '@id': f'{BASE}/get-started', 'url': f'{BASE}/get-started', 'name': 'Book a demo', 'about': {'@id': ORG_ID}}, ORG]),
     'integrators.html': dict(path='/integrators', title='For integrators and security dealers | Verdun',
-        desc='Add monthly recurring revenue to every camera that you install. We run the service and it’s your name on the contract.',
+        desc='Add monthly recurring revenue to every camera that you install. We run the service, it’s your name on the contract, and your clients get daily reports with your brand on them.',
         graph=[{'@type': 'WebPage', '@id': f'{BASE}/integrators', 'url': f'{BASE}/integrators', 'name': 'For integrators and security dealers'},
                {**SERVICE, '@id': f'{BASE}/integrators#service', 'name': 'Verdun monitoring for integrators and security dealers',
                 'audience': {'@type': 'BusinessAudience', 'name': 'Security integrators and dealers'},

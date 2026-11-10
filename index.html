@@ -304,7 +304,7 @@
         <span class="label label--ink">Our solution</span>
         <h3 class="qstep__title">The world’s most advanced monitoring center.</h3>
         <p>AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain.</p>
-        <p class="stat"><b class="is-ink"><span class="stat__q" aria-hidden="true">0Q</span><span class="sr-only">Zero in queue</span></b><span>Humans get to focus on real incidents, not clearing false alarms.</span></p>
+        <p class="stat"><b class="is-ink"><span class="stat__q">0 queue</span></b><span>Humans get to focus on real incidents, not clearing false alarms.</span></p>
         <details class="more more--ink" data-more>
           <summary aria-label="How Verdun works"><span>How it works</span><i aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__inner">
@@ -347,7 +347,7 @@
       <li class="cap"><svg aria-hidden="true"><use href="#i-wave"/></svg><span class="cap__n">01</span><h3>Live talk-down</h3><p>Operators address intruders through on-site speakers, in real time.</p></li>
       <li class="cap"><svg aria-hidden="true"><use href="#i-doc"/></svg><span class="cap__n">02</span><h3>Daily reports</h3><p>How many alarms we reviewed, how fast we reviewed them, and any incidents at your property.</p></li>
       <li class="cap"><svg aria-hidden="true"><use href="#i-radio"/></svg><span class="cap__n">03</span><h3>Coordinated dispatch</h3><p>Guards, police, or on-call contacts receive the location, footage, and context.</p></li>
-      <li class="cap"><svg aria-hidden="true"><use href="#i-cross"/></svg><span class="cap__n">04</span><h3>Your site. Your protocol.</h3><p>Arming schedules and response rules reflect how each property operates.</p></li>
+      <li class="cap"><svg aria-hidden="true"><use href="#i-cross"/></svg><span class="cap__n">04</span><h3>Your own custom protocol</h3><p>We work with you to craft a response protocol that fits your needs.</p></li>
       <li class="cap"><svg aria-hidden="true"><use href="#i-clock"/></svg><span class="cap__n">05</span><h3>A complete event record</h3><p>Every alarm, verification, and response is timestamped and auditable.</p></li>
       <li class="cap"><svg aria-hidden="true"><use href="#i-bolt"/></svg><span class="cap__n">06</span><h3>Fast deployment</h3><p>We can have you up and running within days.</p></li>
     </ul>
@@ -370,8 +370,29 @@
       <div class="proc__track" data-track>
 
         <article class="chap" data-chapter="0">
-          <div class="chap__media" data-depth="1.0">
-            <img width="1600" height="900" src="static/media/product-protocol.webp" alt="Verdun console showing a camera’s protocol: which incidents go to a human, which get a voice-down, and which are dismissed" loading="lazy">
+          <div class="chap__media chap__media--mock" data-depth="1.0" role="img" aria-label="Illustration of what Verdun’s AI looks for: theft, loitering, fire, weapons and trespassing">
+            <div class="detect" aria-hidden="true" data-detect>
+              <div class="detect__view">
+                <span class="detect__live"><i></i>Live</span>
+                <span class="detect__c tl"></span><span class="detect__c tr"></span><span class="detect__c bl"></span><span class="detect__c br"></span>
+                <div class="detect__scene">
+                  <svg class="detect__fig is-on" viewBox="0 0 120 120"><circle cx="46" cy="28" r="9"/><path d="M46 38 L44 70 M44 70 L34 98 M44 70 L56 98 M46 46 L60 54 M46 48 L38 64"/><rect x="58" y="44" width="28" height="22" rx="1.5"/><path d="M58 52 H86"/><rect class="detect__bbox" x="24" y="12" width="72" height="94" rx="2" pathLength="100"/><text class="detect__tag" x="24" y="9">THEFT</text></svg>
+                  <svg class="detect__fig" viewBox="0 0 120 120"><circle cx="44" cy="28" r="9"/><path d="M44 38 V72 M44 72 L36 98 M44 72 L52 98 M44 46 L34 62 M44 46 L54 62"/><circle cx="86" cy="40" r="13"/><path d="M86 32 V40 L92 44"/><rect class="detect__bbox" x="22" y="12" width="82" height="94" rx="2" pathLength="100"/><text class="detect__tag" x="22" y="9">LOITERING</text></svg>
+                  <svg class="detect__fig" viewBox="0 0 120 120"><path d="M60 102 C38 102 30 86 34 72 C38 60 48 54 46 36 C58 44 62 56 60 66 C66 62 70 56 70 46 C82 58 88 74 84 86 C80 98 70 102 60 102 Z"/><path d="M60 102 C52 102 48 94 52 86 C55 80 60 78 60 72 C66 78 70 86 66 94 C64 100 62 102 60 102 Z"/><rect class="detect__bbox" x="24" y="26" width="72" height="84" rx="2" pathLength="100"/><text class="detect__tag" x="24" y="23">FIRE</text></svg>
+                  <svg class="detect__fig" viewBox="0 0 120 120"><path d="M22 46 H94 V58 H62 L58 64 H50 L44 90 H30 L36 58 H22 Z"/><path d="M50 64 C50 72 57 73 59 64"/><path d="M94 50 H100"/><rect class="detect__bbox" x="14" y="36" width="92" height="62" rx="2" pathLength="100"/><text class="detect__tag" x="14" y="33">WEAPONS</text></svg>
+                  <svg class="detect__fig" viewBox="0 0 120 120"><path d="M20 60 V102 M36 54 V102 M52 60 V102 M68 54 V102 M84 60 V102 M14 70 H90 M14 92 H90"/><circle cx="96" cy="28" r="8"/><path d="M96 36 L90 58 M90 58 L78 70 M90 58 L100 78 M95 42 L80 46 M95 42 L104 54"/><rect class="detect__bbox" x="8" y="14" width="104" height="92" rx="2" pathLength="100"/><text class="detect__tag" x="8" y="11">TRESPASSING</text></svg>
+                </div>
+                <span class="detect__scan"></span>
+              </div>
+              <ul class="detect__list">
+                <li class="is-on"><i></i>Theft</li>
+                <li><i></i>Loitering</li>
+                <li><i></i>Fire</li>
+                <li><i></i>Weapons</li>
+                <li><i></i>Trespassing</li>
+              </ul>
+            </div>
+            <span class="media-tag media-tag--bl">Illustrative</span>
           </div>
           <div class="chap__text" data-depth="0.7">
             <span class="chap__n">Step 01</span>

@@ -723,6 +723,21 @@ function initProc() {
       cams.forEach((e, i) => gsap.delayedCall(0.35 + i * 0.22, () => { e.textContent = 'Streaming'; e.classList.remove('is-wait'); }));
     }, { threshold: 0.6 }).observe($('.dmock', track));
   }
+
+  // Step 01: cycle through what the AI looks for.
+  const det = $('[data-detect]', track);
+  if (det) {
+    const figs = $$('.detect__fig', det);
+    const items = $$('.detect__list li', det);
+    let n = 0, timer = null;
+    const show = (k) => { figs.forEach((f, i) => f.classList.toggle('is-on', i === k)); items.forEach((l, i) => l.classList.toggle('is-on', i === k)); };
+    if (!REDUCE) {
+      new IntersectionObserver((es) => {
+        if (es[0].isIntersecting) { if (!timer) timer = setInterval(() => { n = (n + 1) % figs.length; show(n); }, 1900); }
+        else { clearInterval(timer); timer = null; }
+      }, { threshold: 0.3 }).observe(det);
+    }
+  }
 }
 
 /* ------------------------------------------------------------------ */

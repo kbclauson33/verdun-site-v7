@@ -92,8 +92,7 @@ File: `index.html`
 - Our solution
 - The world’s most advanced monitoring center.
 - AI agents review every alarm in parallel. They dismiss the noise, log what’s routine, and escalate what’s real or uncertain.
-- 0Q
-- Zero in queue
+- 0 queue
 - Humans get to focus on real incidents, not clearing false alarms.
 - How it works
 - Verdun deploys AI agents that identify suspicious behavior, weigh the context, and reason about what they see. Only then do they pull up a live view and escalate to one of our human operators.
@@ -135,8 +134,8 @@ File: `index.html`
 - Coordinated dispatch
 - Guards, police, or on-call contacts receive the location, footage, and context.
 - 04
-- Your site. Your protocol.
-- Arming schedules and response rules reflect how each property operates.
+- Your own custom protocol
+- We work with you to craft a response protocol that fits your needs.
 - 05
 - A complete event record
 - Every alarm, verification, and response is timestamped and auditable.
@@ -149,6 +148,13 @@ File: `index.html`
 - 01
 - 02
 - 03
+- Live
+- Theft
+- Loitering
+- Fire
+- Weapons
+- Trespassing
+- Illustrative
 - Step 01
 - Tell us what you want to monitor for.
 - Theft, loitering, fire, weapons, trespassing and more.
@@ -187,7 +193,6 @@ File: `index.html`
 - Be up and running in days.
 - We hook up to your cameras, configure our AI for your use cases, then test for a few days.
 - Book a demo
-- (alt) Verdun console showing a camera’s protocol: which incidents go to a human, which get a voice-down, and which are dismissed
 - (alt) Verdun alarm queue with agent verdicts across sites
 
 ### Incentive
